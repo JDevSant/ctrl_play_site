@@ -1,14 +1,22 @@
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ctrl+Play | Tecnologia que transforma</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#07111f">
 
     <meta name="description"
-          content="Conheça a Ctrl+Play, uma escola de tecnologia para crianças e adolescentes. Programação, robótica, criatividade e inovação.">
+          content="Ctrl+Play — tecnologia, criatividade e inovação para crianças e adolescentes.">
+
+    <title>Ctrl+Play | Descubra o futuro</title>
+
 
     <style>
 
@@ -27,19 +35,27 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #07111f;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #050b14;
             color: #ffffff;
-            line-height: 1.6;
+
+            overflow-x: hidden;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        img {
-            max-width: 100%;
+        button {
+            font-family: inherit;
         }
 
 
@@ -48,15 +64,47 @@
         ===================================================== */
 
         :root {
-            --azul: #1597ff;
-            --azul-escuro: #07111f;
-            --azul-card: #0d1d31;
-            --azul-claro: #55c7ff;
-            --roxo: #7c4dff;
-            --verde: #00d084;
-            --amarelo: #ffd43b;
-            --branco: #ffffff;
-            --cinza: #b8c4d4;
+
+            --blue: #168cff;
+            --blue-light: #55c8ff;
+
+            --purple: #8057ff;
+            --green: #00d084;
+
+            --dark: #050b14;
+            --dark-2: #081321;
+            --dark-3: #0d1b2c;
+
+            --text: #ffffff;
+            --muted: #aebdce;
+
+            --border:
+                rgba(255,255,255,0.09);
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #168cff,
+                    #8057ff
+                );
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050b14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #168cff;
+            border-radius: 10px;
         }
 
 
@@ -65,52 +113,126 @@
         ===================================================== */
 
         header {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
+
             z-index: 1000;
 
-            background: rgba(7, 17, 31, 0.92);
-            backdrop-filter: blur(12px);
+            background:
+                rgba(5,11,20,0.78);
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
         }
+
 
         .navbar {
+
             max-width: 1200px;
+
             margin: auto;
 
+            height: 74px;
+
+            padding:
+                0 25px;
+
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
 
-            padding: 18px 25px;
+            justify-content: space-between;
         }
 
+
+        /* LOGO */
+
         .logo {
+
             font-size: 25px;
-            font-weight: bold;
-            color: white;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: var(--azul);
+            color: var(--blue);
         }
 
+
+        /* MENU */
+
         nav {
+
             display: flex;
-            gap: 25px;
+
+            align-items: center;
+
+            gap: 28px;
         }
 
         nav a {
-            color: var(--cinza);
+
+            color: var(--muted);
+
             font-size: 14px;
-            transition: 0.3s;
+
+            font-weight: 600;
+
+            transition:
+                0.25s;
         }
 
         nav a:hover {
-            color: var(--azul-claro);
+
+            color: white;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .nav-button {
+
+            padding:
+                10px 18px;
+
+            border-radius:
+                9px;
+
+            background:
+                var(--gradient);
+
+            color: white;
+
+            font-weight: 700;
+        }
+
+
+        /* MOBILE MENU */
+
+        .menu-button {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 27px;
+
+            cursor: pointer;
         }
 
 
@@ -119,261 +241,795 @@
         ===================================================== */
 
         .hero {
-            min-height: 100vh;
+
+            min-height:
+                100vh;
+
+            position: relative;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
-            padding: 130px 20px 80px;
+            padding:
+                130px 20px 80px;
+
+            overflow: hidden;
 
             background:
-                radial-gradient(circle at 20% 30%, rgba(21,151,255,0.25), transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(124,77,255,0.22), transparent 30%),
-                #07111f;
+
+                radial-gradient(
+                    circle at 15% 25%,
+                    rgba(22,140,255,0.22),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(128,87,255,0.22),
+                    transparent 28%
+                ),
+
+                #050b14;
         }
+
+
+        /* LUZES */
+
+        .orb {
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.15;
+
+            pointer-events: none;
+        }
+
+        .orb-1 {
+
+            background: #168cff;
+
+            top: 10%;
+            left: -120px;
+        }
+
+        .orb-2 {
+
+            background: #8057ff;
+
+            bottom: -100px;
+            right: -100px;
+        }
+
 
         .hero-content {
-            max-width: 850px;
+
+            max-width:
+                900px;
+
+            position:
+                relative;
+
+            z-index: 2;
         }
 
-        .badge {
-            display: inline-block;
 
-            padding: 8px 16px;
-            margin-bottom: 25px;
+        .hero-badge {
 
-            border-radius: 30px;
+            display:
+                inline-flex;
 
-            background: rgba(21,151,255,0.12);
-            border: 1px solid rgba(21,151,255,0.35);
+            align-items:
+                center;
 
-            color: var(--azul-claro);
-            font-size: 14px;
+            gap: 8px;
+
+            padding:
+                8px 14px;
+
+            margin-bottom:
+                25px;
+
+            border:
+                1px solid
+                rgba(85,200,255,0.25);
+
+            border-radius:
+                30px;
+
+            background:
+                rgba(22,140,255,0.08);
+
+            color:
+                var(--blue-light);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
         }
+
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+
+            font-size:
+                clamp(45px, 8vw, 82px);
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -4px;
+
+            margin-bottom:
+                28px;
         }
 
-        .hero h1 span {
-            color: var(--azul);
+
+        .gradient-text {
+
+            background:
+                var(--gradient);
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
         }
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
 
-            color: var(--cinza);
-            font-size: 19px;
+        .hero-description {
+
+            max-width:
+                720px;
+
+            margin:
+                auto;
+
+            color:
+                var(--muted);
+
+            font-size:
+                clamp(16px, 2vw, 19px);
+
+            line-height:
+                1.7;
         }
+
 
         .hero-buttons {
-            margin-top: 35px;
 
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                12px;
+
+            margin-top:
+                35px;
         }
 
-        .btn {
-            padding: 14px 25px;
 
-            border-radius: 10px;
+        .button {
 
-            font-weight: bold;
+            display:
+                inline-flex;
 
-            transition: 0.3s;
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                14px 22px;
+
+            border-radius:
+                11px;
+
+            font-size:
+                14px;
+
+            font-weight:
+                800;
+
+            transition:
+                0.25s;
         }
 
-        .btn-primary {
-            background: var(--azul);
-            color: white;
+
+        .button-primary {
+
+            background:
+                var(--gradient);
+
+            box-shadow:
+                0 12px 35px
+                rgba(22,140,255,0.2);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(21,151,255,0.3);
+        .button-primary:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 18px 45px
+                rgba(22,140,255,0.3);
         }
 
-        .btn-secondary {
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
+
+        .button-secondary {
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.03);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.08);
+        .button-secondary:hover {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            transform:
+                translateY(-3px);
         }
 
 
         /* =====================================================
-           SEÇÕES
+           HERO INFO
+        ===================================================== */
+
+        .hero-info {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                12px;
+
+            max-width:
+                650px;
+
+            margin:
+                65px auto 0;
+        }
+
+
+        .hero-info-card {
+
+            padding:
+                18px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            backdrop-filter:
+                blur(10px);
+        }
+
+
+        .hero-info-card strong {
+
+            display:
+                block;
+
+            font-size:
+                24px;
+        }
+
+
+        .hero-info-card span {
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+        }
+
+
+        /* =====================================================
+           SECTIONS
         ===================================================== */
 
         section {
-            padding: 90px 20px;
+
+            padding:
+                100px 20px;
         }
+
 
         .container {
-            max-width: 1150px;
-            margin: auto;
+
+            max-width:
+                1150px;
+
+            margin:
+                auto;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 55px;
+
+        .section-header {
+
+            max-width:
+                700px;
+
+            margin:
+                0 auto 55px;
+
+            text-align:
+                center;
         }
 
-        .section-title span {
-            color: var(--azul);
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+
+        .section-label {
+
+            display:
+                inline-block;
+
+            margin-bottom:
+                12px;
+
+            color:
+                var(--blue-light);
+
+            font-size:
+                12px;
+
+            font-weight:
+                900;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                2px;
         }
 
-        .section-title h2 {
-            font-size: 38px;
-            margin-top: 10px;
+
+        .section-header h2 {
+
+            font-size:
+                clamp(30px,5vw,46px);
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -2px;
         }
 
-        .section-title p {
-            color: var(--cinza);
-            max-width: 650px;
-            margin: 15px auto 0;
+
+        .section-header p {
+
+            margin-top:
+                16px;
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.7;
         }
 
 
         /* =====================================================
-           O QUE É
+           SOBRE
         ===================================================== */
 
         .about {
-            background: #091827;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: var(--cinza);
-            margin-bottom: 15px;
-        }
-
-        .about-box {
-            padding: 35px;
-
-            border-radius: 20px;
 
             background:
-                linear-gradient(145deg, #102b45, #0b1829);
-
-            border: 1px solid rgba(255,255,255,0.08);
+                #081321;
         }
 
-        .about-box .big-icon {
-            font-size: 70px;
-            margin-bottom: 15px;
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
+            gap:
+                60px;
+
+            align-items:
+                center;
+        }
+
+
+        .about-text h3 {
+
+            font-size:
+                34px;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .about-text p {
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.8;
+
+            margin-bottom:
+                15px;
+        }
+
+
+        .about-highlight {
+
+            margin-top:
+                28px;
+
+            display:
+                flex;
+
+            gap:
+                12px;
+
+            align-items:
+                center;
+
+            color:
+                #dce8f5;
+
+            font-weight:
+                700;
+        }
+
+
+        .check {
+
+            width:
+                28px;
+
+            height:
+                28px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex-shrink:
+                0;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(0,208,132,0.12);
+
+            color:
+                var(--green);
+        }
+
+
+        /* ABOUT VISUAL */
+
+        .about-visual {
+
+            position:
+                relative;
+
+            min-height:
+                390px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                28px;
+
+            overflow:
+                hidden;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(22,140,255,0.18),
+                    transparent 60%
+                ),
+
+                #0b1727;
+        }
+
+
+        .robot {
+
+            font-size:
+                120px;
+
+            filter:
+                drop-shadow(
+                    0 20px 30px
+                    rgba(22,140,255,0.25)
+                );
+
+            animation:
+                float 4s ease-in-out infinite;
+        }
+
+
+        @keyframes float {
+
+            0%,100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-14px);
+            }
+        }
+
+
+        .floating-card {
+
+            position:
+                absolute;
+
+            padding:
+                12px 16px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(8,19,33,0.85);
+
+            backdrop-filter:
+                blur(10px);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+        }
+
+
+        .floating-card.one {
+
+            top:
+                25px;
+
+            left:
+                25px;
+        }
+
+
+        .floating-card.two {
+
+            bottom:
+                25px;
+
+            right:
+                25px;
         }
 
 
         /* =====================================================
-           CARDS
+           JORNADA
         ===================================================== */
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+        .journey {
 
-        .card {
-            background: var(--azul-card);
-
-            padding: 30px;
-
-            border-radius: 18px;
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(21,151,255,0.4);
-        }
-
-        .card-icon {
-            font-size: 42px;
-            margin-bottom: 18px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: var(--cinza);
-            font-size: 15px;
+            position:
+                relative;
         }
 
 
-        /* =====================================================
-           NÍVEIS
-        ===================================================== */
+        .journey-line {
 
-        .levels {
-            background: #091827;
+            position:
+                absolute;
+
+            top:
+                220px;
+
+            left:
+                10%;
+
+            right:
+                10%;
+
+            height:
+                2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #168cff,
+                    #8057ff,
+                    transparent
+                );
+
+            opacity:
+                0.4;
         }
 
-        .level-card {
-            position: relative;
-            overflow: hidden;
+
+        .journey-grid {
+
+            position:
+                relative;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap:
+                18px;
         }
 
-        .level-number {
-            position: absolute;
-            top: 15px;
-            right: 20px;
 
-            font-size: 45px;
-            font-weight: bold;
+        .journey-card {
 
-            color: rgba(255,255,255,0.05);
+            position:
+                relative;
+
+            padding:
+                30px 22px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                20px;
+
+            background:
+                #0b1829;
+
+            transition:
+                0.3s;
         }
 
-        .level-card h3 {
-            color: var(--azul-claro);
+
+        .journey-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(22,140,255,0.45);
         }
 
-        .level-tag {
-            display: inline-block;
 
-            margin-bottom: 15px;
-            padding: 5px 10px;
+        .journey-icon {
 
-            border-radius: 20px;
+            width:
+                55px;
 
-            background: rgba(21,151,255,0.12);
-            color: var(--azul-claro);
+            height:
+                55px;
 
-            font-size: 12px;
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            margin-bottom:
+                20px;
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(22,140,255,0.1);
+
+            font-size:
+                27px;
+        }
+
+
+        .journey-number {
+
+            position:
+                absolute;
+
+            top:
+                20px;
+
+            right:
+                20px;
+
+            color:
+                rgba(255,255,255,0.15);
+
+            font-weight:
+                900;
+
+            font-size:
+                25px;
+        }
+
+
+        .journey-card h3 {
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .journey-card p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
         }
 
 
@@ -381,32 +1037,85 @@
            TECNOLOGIAS
         ===================================================== */
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+        .technologies {
+
+            background:
+                #081321;
         }
 
-        .tech {
-            padding: 25px;
-            text-align: center;
 
-            background: var(--azul-card);
+        .technology-grid {
 
-            border-radius: 15px;
+            display:
+                grid;
 
-            border: 1px solid rgba(255,255,255,0.06);
+            grid-template-columns:
+                repeat(4,1fr);
 
-            transition: 0.3s;
+            gap:
+                15px;
         }
 
-        .tech:hover {
-            transform: scale(1.03);
+
+        .technology {
+
+            padding:
+                28px 20px;
+
+            text-align:
+                center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition:
+                0.3s;
         }
 
-        .tech-icon {
-            font-size: 38px;
-            margin-bottom: 10px;
+
+        .technology:hover {
+
+            transform:
+                translateY(-6px);
+
+            background:
+                rgba(22,140,255,0.06);
+        }
+
+
+        .technology-icon {
+
+            font-size:
+                38px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .technology h3 {
+
+            font-size:
+                17px;
+        }
+
+
+        .technology p {
+
+            color:
+                var(--muted);
+
+            margin-top:
+                5px;
+
+            font-size:
+                12px;
         }
 
 
@@ -414,88 +1123,205 @@
            PROJETOS
         ===================================================== */
 
+        .projects-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap:
+                20px;
+        }
+
+
         .project {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
 
-            gap: 40px;
+            position:
+                relative;
 
-            align-items: center;
+            min-height:
+                270px;
 
-            margin-bottom: 50px;
-        }
+            padding:
+                30px;
 
-        .project:nth-child(even) {
-            direction: rtl;
-        }
+            display:
+                flex;
 
-        .project:nth-child(even) .project-text {
-            direction: ltr;
-        }
+            flex-direction:
+                column;
 
-        .project-visual {
-            min-height: 280px;
+            justify-content:
+                flex-end;
 
-            border-radius: 20px;
+            border:
+                1px solid var(--border);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-radius:
+                22px;
 
-            font-size: 100px;
+            overflow:
+                hidden;
 
             background:
-                radial-gradient(circle, rgba(21,151,255,0.25), transparent 60%),
-                #0c1b2d;
+                #0b1829;
 
-            border: 1px solid rgba(255,255,255,0.07);
+            transition:
+                0.3s;
         }
 
-        .project-text h3 {
-            font-size: 30px;
-            margin-bottom: 15px;
+
+        .project:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(22,140,255,0.4);
         }
 
-        .project-text p {
-            color: var(--cinza);
+
+        .project-icon {
+
+            position:
+                absolute;
+
+            top:
+                25px;
+
+            right:
+                28px;
+
+            font-size:
+                70px;
+
+            opacity:
+                0.8;
+        }
+
+
+        .project h3 {
+
+            font-size:
+                25px;
+
+            margin-bottom:
+                8px;
+        }
+
+
+        .project p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            max-width:
+                500px;
         }
 
 
         /* =====================================================
-           METODOLOGIA
+           HABILIDADES
         ===================================================== */
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .skills {
+
+            background:
+                #081321;
         }
 
-        .step {
-            text-align: center;
+
+        .skills-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                18px;
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .skill {
 
-            margin: 0 auto 20px;
+            display:
+                flex;
 
-            border-radius: 50%;
+            gap:
+                16px;
 
-            background: var(--azul);
+            padding:
+                22px;
 
-            font-size: 22px;
-            font-weight: bold;
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                17px;
+
+            background:
+                rgba(255,255,255,0.025);
         }
 
-        .step p {
-            color: var(--cinza);
-            font-size: 14px;
+
+        .skill-icon {
+
+            width:
+                45px;
+
+            height:
+                45px;
+
+            flex-shrink:
+                0;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(22,140,255,0.1);
+
+            font-size:
+                22px;
+        }
+
+
+        .skill h3 {
+
+            font-size:
+                16px;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .skill p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.5;
         }
 
 
@@ -504,30 +1330,92 @@
         ===================================================== */
 
         .faq {
-            max-width: 800px;
-            margin: auto;
+
+            max-width:
+                800px;
+
+            margin:
+                auto;
         }
+
 
         details {
-            background: var(--azul-card);
 
-            margin-bottom: 12px;
+            margin-bottom:
+                12px;
 
-            padding: 20px;
+            border:
+                1px solid var(--border);
 
-            border-radius: 12px;
+            border-radius:
+                15px;
 
-            border: 1px solid rgba(255,255,255,0.07);
+            background:
+                #0b1829;
+
+            overflow:
+                hidden;
         }
+
 
         summary {
-            cursor: pointer;
-            font-weight: bold;
+
+            padding:
+                20px;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                800;
+
+            list-style:
+                none;
         }
 
+
+        summary::-webkit-details-marker {
+            display:
+                none;
+        }
+
+
+        summary::after {
+
+            content:
+                "+";
+
+            float:
+                right;
+
+            color:
+                var(--blue-light);
+
+            font-size:
+                22px;
+        }
+
+
+        details[open] summary::after {
+
+            content:
+                "−";
+        }
+
+
         details p {
-            color: var(--cinza);
-            margin-top: 15px;
+
+            padding:
+                0 20px 20px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
         }
 
 
@@ -536,21 +1424,80 @@
         ===================================================== */
 
         .cta {
-            text-align: center;
+
+            padding:
+                110px 20px;
+
+            text-align:
+                center;
 
             background:
-                radial-gradient(circle at center, rgba(21,151,255,0.25), transparent 55%),
-                #091827;
+
+                radial-gradient(
+                    circle at center,
+                    rgba(22,140,255,0.22),
+                    transparent 55%
+                ),
+
+                #07111f;
         }
+
+
+        .cta-box {
+
+            max-width:
+                850px;
+
+            margin:
+                auto;
+
+            padding:
+                60px 30px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                28px;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
 
         .cta h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
+
+            font-size:
+                clamp(32px,5vw,50px);
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom:
+                15px;
         }
 
+
         .cta p {
-            color: var(--cinza);
-            margin-bottom: 30px;
+
+            max-width:
+                600px;
+
+            margin:
+                auto;
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.7;
+        }
+
+
+        .cta .button {
+
+            margin-top:
+                30px;
         }
 
 
@@ -559,20 +1506,132 @@
         ===================================================== */
 
         footer {
-            padding: 40px 20px;
 
-            background: #050c15;
+            padding:
+                45px 20px;
 
-            text-align: center;
+            background:
+                #03070d;
+
+            border-top:
+                1px solid var(--border);
+
+            text-align:
+                center;
         }
+
 
         footer .logo {
-            margin-bottom: 10px;
+
+            margin-bottom:
+                10px;
         }
 
+
         footer p {
-            color: #7f8da0;
-            font-size: 13px;
+
+            color:
+                #718094;
+
+            font-size:
+                12px;
+        }
+
+
+        /* =====================================================
+           BOTÃO TOPO
+        ===================================================== */
+
+        .top-button {
+
+            position:
+                fixed;
+
+            right:
+                20px;
+
+            bottom:
+                20px;
+
+            width:
+                45px;
+
+            height:
+                45px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(8,19,33,0.9);
+
+            color:
+                white;
+
+            cursor:
+                pointer;
+
+            z-index:
+                900;
+
+            opacity:
+                0;
+
+            pointer-events:
+                none;
+
+            transition:
+                0.3s;
+        }
+
+
+        .top-button.show {
+
+            opacity:
+                1;
+
+            pointer-events:
+                auto;
+        }
+
+
+        /* =====================================================
+           ANIMAÇÕES DE ENTRADA
+        ===================================================== */
+
+        .reveal {
+
+            opacity:
+                0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
         }
 
 
@@ -580,78 +1639,181 @@
            RESPONSIVO
         ===================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 950px) {
 
             nav {
                 display: none;
             }
 
-            .about-grid,
-            .project {
-                grid-template-columns: 1fr;
+            .menu-button {
+                display: block;
             }
 
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
+            nav.mobile-open {
+
+                position:
+                    absolute;
+
+                top:
+                    74px;
+
+                left:
+                    15px;
+
+                right:
+                    15px;
+
+                display:
+                    flex;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    0;
+
+                padding:
+                    10px;
+
+                border:
+                    1px solid var(--border);
+
+                border-radius:
+                    15px;
+
+                background:
+                    rgba(5,11,20,0.97);
+
+                backdrop-filter:
+                    blur(20px);
             }
 
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            nav.mobile-open a {
+
+                padding:
+                    15px;
+
+                border-radius:
+                    8px;
             }
 
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 35px;
+            .about-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .journey-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .journey-line {
+                display:
+                    none;
+            }
+
+            .technology-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
             }
         }
 
-        @media (max-width: 600px) {
+
+        @media (max-width: 650px) {
 
             section {
-                padding: 65px 18px;
+                padding:
+                    75px 18px;
             }
 
-            .cards {
-                grid-template-columns: 1fr;
+            .navbar {
+                padding:
+                    0 18px;
             }
 
-            .tech-grid {
-                grid-template-columns: 1fr 1fr;
+            .hero {
+                padding:
+                    120px 18px 70px;
             }
 
             .hero h1 {
-                font-size: 45px;
+
+                font-size:
+                    48px;
+
+                letter-spacing:
+                    -2.5px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .hero-info {
+                grid-template-columns:
+                    1fr;
+
+                max-width:
+                    260px;
             }
 
-            .section-title h2 {
-                font-size: 30px;
+            .hero-info-card {
+                padding:
+                    14px;
             }
 
-            .cta h2 {
-                font-size: 32px;
+            .about-visual {
+                min-height:
+                    300px;
             }
 
-            .steps {
-                grid-template-columns: 1fr;
+            .robot {
+                font-size:
+                    90px;
             }
 
-            .project:nth-child(even) {
-                direction: ltr;
+            .journey-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .technology-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .cta-box {
+                padding:
+                    45px 20px;
+            }
+
+            .button {
+                width:
+                    100%;
             }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
 
 <!-- =====================================================
-     MENU
+     HEADER
 ===================================================== -->
 
 <header>
@@ -662,13 +1824,44 @@
             Ctrl<span>+</span>Play
         </a>
 
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#niveis">Níveis</a>
-            <a href="#tecnologias">Tecnologias</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#faq">FAQ</a>
+
+        <nav id="menu">
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#jornada">
+                Jornada
+            </a>
+
+            <a href="#tecnologias">
+                Tecnologias
+            </a>
+
+            <a href="#projetos">
+                Projetos
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+            <a href="#contato" class="nav-button">
+                Conheça
+            </a>
+
         </nav>
+
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+            aria-label="Abrir menu">
+
+            ☰
+
+        </button>
 
     </div>
 
@@ -681,31 +1874,101 @@
 
 <section class="hero" id="inicio">
 
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+
     <div class="hero-content">
 
-        <div class="badge">
-            🚀 Tecnologia • Criatividade • Futuro
+        <div class="hero-badge">
+
+            🚀
+            Tecnologia que vira experiência
+
         </div>
 
+
         <h1>
-            O futuro começa quando você aperta
-            <span>Ctrl + Play</span>
+
+            Aprender tecnologia
+            pode ser
+            <span class="gradient-text">
+                incrível.
+            </span>
+
         </h1>
 
-        <p>
-            Um espaço onde crianças e adolescentes aprendem tecnologia
-            criando, experimentando e transformando ideias em projetos.
+
+        <p class="hero-description">
+
+            Na Ctrl+Play, crianças e adolescentes
+            aprendem programação, robótica e tecnologia
+            colocando suas próprias ideias em prática.
+
         </p>
+
 
         <div class="hero-buttons">
 
-            <a href="#niveis" class="btn btn-primary">
-                Conhecer os níveis
+            <a
+                href="#jornada"
+                class="button button-primary">
+
+                🚀 Descobrir a jornada
+
             </a>
 
-            <a href="#projetos" class="btn btn-secondary">
-                Ver projetos
+
+            <a
+                href="#projetos"
+                class="button button-secondary">
+
+                🤖 Ver projetos
+
             </a>
+
+        </div>
+
+
+        <div class="hero-info">
+
+            <div class="hero-info-card">
+
+                <strong>
+                    💻
+                </strong>
+
+                <span>
+                    Programação
+                </span>
+
+            </div>
+
+
+            <div class="hero-info-card">
+
+                <strong>
+                    🤖
+                </strong>
+
+                <span>
+                    Robótica
+                </span>
+
+            </div>
+
+
+            <div class="hero-info-card">
+
+                <strong>
+                    🚀
+                </strong>
+
+                <span>
+                    Criatividade
+                </span>
+
+            </div>
 
         </div>
 
@@ -722,15 +1985,20 @@
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-header reveal">
 
-            <span>Sobre</span>
+            <span class="section-label">
+                Sobre a Ctrl+Play
+            </span>
 
-            <h2>O que é a Ctrl+Play?</h2>
+            <h2>
+                Tecnologia não é só usar.
+                É saber criar.
+            </h2>
 
             <p>
-                Aprender tecnologia pode ser muito mais divertido
-                quando o aluno coloca a mão na massa.
+                O objetivo é transformar curiosidade em
+                conhecimento e conhecimento em projetos.
             </p>
 
         </div>
@@ -738,321 +2006,211 @@
 
         <div class="about-grid">
 
-            <div class="about-text">
+            <div class="about-text reveal">
 
-                <h3>Aprender criando.</h3>
+                <h3>
+                    Aprender fazendo.
+                </h3>
 
-                <p>
-                    A Ctrl+Play é uma proposta de educação tecnológica
-                    voltada para crianças e adolescentes.
-                </p>
 
                 <p>
-                    Durante as atividades, os alunos desenvolvem projetos
-                    envolvendo programação, robótica, eletrônica,
-                    criatividade e resolução de problemas.
+
+                    Em vez de apenas assistir a uma explicação,
+                    o aluno experimenta, constrói, testa,
+                    erra, corrige e tenta novamente.
+
                 </p>
 
+
                 <p>
-                    A ideia é transformar o aluno de consumidor de
-                    tecnologia em alguém capaz de criar e entender
-                    como a tecnologia funciona.
+
+                    Cada projeto é uma oportunidade para
+                    desenvolver conhecimentos tecnológicos
+                    e habilidades que vão muito além da programação.
+
                 </p>
+
+
+                <div class="about-highlight">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span>
+                        Criatividade e resolução de problemas
+                    </span>
+
+                </div>
+
+
+                <div class="about-highlight">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span>
+                        Pensamento lógico e autonomia
+                    </span>
+
+                </div>
+
+
+                <div class="about-highlight">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span>
+                        Tecnologia aplicada na prática
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div class="about-box">
+            <div class="about-visual reveal">
 
-                <div class="big-icon">
+                <div class="floating-card one">
+                    💡 Ideia
+                </div>
+
+                <div class="robot">
                     🤖
                 </div>
 
-                <h3>
-                    Tecnologia na prática
-                </h3>
-
-                <p>
-                    Em vez de apenas assistir a uma explicação,
-                    o aluno experimenta, testa, erra, corrige
-                    e constrói seus próprios projetos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     COMO FUNCIONA
-===================================================== -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>Metodologia</span>
-
-            <h2>Como funciona?</h2>
-
-            <p>
-                O aprendizado acontece através de desafios e projetos.
-            </p>
-
-        </div>
-
-
-        <div class="steps">
-
-            <div class="step">
-
-                <div class="step-number">1</div>
-
-                <h3>Descobrir</h3>
-
-                <p>
-                    O aluno conhece uma nova tecnologia
-                    ou conceito.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">2</div>
-
-                <h3>Experimentar</h3>
-
-                <p>
-                    Coloca o conhecimento em prática
-                    através de desafios.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">3</div>
-
-                <h3>Criar</h3>
-
-                <p>
-                    Desenvolve seu próprio projeto
-                    e encontra soluções.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">4</div>
-
-                <h3>Apresentar</h3>
-
-                <p>
-                    Mostra o projeto e explica
-                    como ele funciona.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NÍVEIS
-===================================================== -->
-
-<section class="levels" id="niveis">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>Aprendizado</span>
-
-            <h2>Níveis de aprendizagem</h2>
-
-            <p>
-                O conhecimento evolui junto com o aluno.
-            </p>
-
-        </div>
-
-
-        <div class="cards">
-
-
-            <div class="card level-card">
-
-                <div class="level-number">
-                    01
+                <div class="floating-card two">
+                    🚀 Projeto pronto!
                 </div>
 
-                <span class="level-tag">
-                    INICIANTE
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JORNADA
+===================================================== -->
+
+<section class="journey" id="jornada">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                Jornada de aprendizagem
+            </span>
+
+            <h2>
+                Do primeiro código
+                ao projeto próprio.
+            </h2>
+
+            <p>
+                O aluno evolui gradualmente,
+                aumentando a complexidade dos desafios.
+            </p>
+
+        </div>
+
+
+        <div class="journey-line"></div>
+
+
+        <div class="journey-grid">
+
+
+            <div class="journey-card reveal">
+
+                <span class="journey-number">
+                    01
                 </span>
 
-                <div class="card-icon">
+                <div class="journey-icon">
                     🧩
                 </div>
 
                 <h3>
-                    Descobridor
+                    Descobrir
                 </h3>
 
                 <p>
                     Primeiros contatos com lógica,
-                    criatividade, programação visual
-                    e conceitos básicos de tecnologia.
+                    criatividade e tecnologia.
                 </p>
 
             </div>
 
 
-            <div class="card level-card">
+            <div class="journey-card reveal">
 
-                <div class="level-number">
+                <span class="journey-number">
                     02
-                </div>
-
-                <span class="level-tag">
-                    BÁSICO
                 </span>
 
-                <div class="card-icon">
+                <div class="journey-icon">
                     💻
                 </div>
 
                 <h3>
-                    Criador
+                    Criar
                 </h3>
 
                 <p>
-                    O aluno começa a criar jogos,
-                    animações e projetos utilizando
-                    conceitos de programação.
+                    Jogos, animações e primeiros
+                    projetos de programação.
                 </p>
 
             </div>
 
 
-            <div class="card level-card">
+            <div class="journey-card reveal">
 
-                <div class="level-number">
+                <span class="journey-number">
                     03
-                </div>
-
-                <span class="level-tag">
-                    INTERMEDIÁRIO
                 </span>
 
-                <div class="card-icon">
+                <div class="journey-icon">
                     ⚙️
                 </div>
 
                 <h3>
-                    Inventor
+                    Construir
                 </h3>
 
                 <p>
-                    Projetos mais complexos envolvendo
-                    programação, sensores, eletrônica
-                    e automação.
+                    Sensores, eletrônica, robótica
+                    e sistemas interativos.
                 </p>
 
             </div>
 
 
-            <div class="card level-card">
+            <div class="journey-card reveal">
 
-                <div class="level-number">
+                <span class="journey-number">
                     04
-                </div>
-
-                <span class="level-tag">
-                    AVANÇADO
                 </span>
 
-                <div class="card-icon">
-                    🤖
-                </div>
-
-                <h3>
-                    Engenheiro
-                </h3>
-
-                <p>
-                    Desenvolvimento de robôs,
-                    sistemas automatizados e projetos
-                    tecnológicos completos.
-                </p>
-
-            </div>
-
-
-            <div class="card level-card">
-
-                <div class="level-number">
-                    05
-                </div>
-
-                <span class="level-tag">
-                    DESAFIO
-                </span>
-
-                <div class="card-icon">
+                <div class="journey-icon">
                     🚀
                 </div>
 
                 <h3>
-                    Inovador
+                    Inovar
                 </h3>
 
                 <p>
-                    O aluno combina diferentes tecnologias
-                    para desenvolver soluções próprias
-                    para problemas reais.
-                </p>
-
-            </div>
-
-
-            <div class="card level-card">
-
-                <div class="level-number">
-                    ★
-                </div>
-
-                <span class="level-tag">
-                    PROJETO
-                </span>
-
-                <div class="card-icon">
-                    🏆
-                </div>
-
-                <h3>
-                    Maker
-                </h3>
-
-                <p>
-                    Momento de transformar uma ideia
-                    em um projeto completo e apresentar
-                    a solução criada.
+                    Projetos próprios para resolver
+                    problemas e apresentar soluções.
                 </p>
 
             </div>
@@ -1068,125 +2226,162 @@
      TECNOLOGIAS
 ===================================================== -->
 
-<section id="tecnologias">
+<section class="technologies" id="tecnologias">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-header reveal">
 
-            <span>Universo tecnológico</span>
+            <span class="section-label">
+                Universo tecnológico
+            </span>
 
-            <h2>O que podemos aprender?</h2>
+            <h2>
+                O que podemos explorar?
+            </h2>
 
             <p>
-                Diversas áreas da tecnologia podem fazer parte
-                da jornada de aprendizagem.
+                Diferentes tecnologias podem se transformar
+                em experiências de aprendizagem.
             </p>
 
         </div>
 
 
-        <div class="tech-grid">
+        <div class="technology-grid">
 
-            <div class="tech">
 
-                <div class="tech-icon">💻</div>
+            <div class="technology reveal">
 
-                <h3>Programação</h3>
+                <div class="technology-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Programação
+                </h3>
 
                 <p>
-                    Lógica e desenvolvimento.
+                    Lógica e desenvolvimento
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">🤖</div>
+                <div class="technology-icon">
+                    🤖
+                </div>
 
-                <h3>Robótica</h3>
+                <h3>
+                    Robótica
+                </h3>
 
                 <p>
-                    Robôs e automação.
+                    Robôs e automação
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">⚡</div>
+                <div class="technology-icon">
+                    ⚡
+                </div>
 
-                <h3>Eletrônica</h3>
+                <h3>
+                    Eletrônica
+                </h3>
 
                 <p>
-                    Sensores e circuitos.
+                    Circuitos e sensores
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">🎮</div>
+                <div class="technology-icon">
+                    🎮
+                </div>
 
-                <h3>Games</h3>
+                <h3>
+                    Games
+                </h3>
 
                 <p>
-                    Jogos e experiências.
+                    Jogos e experiências
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">🧠</div>
+                <div class="technology-icon">
+                    🧠
+                </div>
 
-                <h3>IA</h3>
+                <h3>
+                    Inteligência Artificial
+                </h3>
 
                 <p>
-                    Inteligência artificial.
+                    Novas possibilidades
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">🌐</div>
+                <div class="technology-icon">
+                    🌐
+                </div>
 
-                <h3>Web</h3>
+                <h3>
+                    Web
+                </h3>
 
                 <p>
-                    Sites e aplicações.
+                    Sites e aplicações
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">📱</div>
+                <div class="technology-icon">
+                    📱
+                </div>
 
-                <h3>Apps</h3>
+                <h3>
+                    Apps
+                </h3>
 
                 <p>
-                    Aplicativos e interfaces.
+                    Aplicativos
                 </p>
 
             </div>
 
 
-            <div class="tech">
+            <div class="technology reveal">
 
-                <div class="tech-icon">🛠️</div>
+                <div class="technology-icon">
+                    🛠️
+                </div>
 
-                <h3>Maker</h3>
+                <h3>
+                    Maker
+                </h3>
 
                 <p>
-                    Criar, testar e construir.
+                    Criar e construir
                 </p>
 
             </div>
@@ -1202,109 +2397,99 @@
      PROJETOS
 ===================================================== -->
 
-<section class="levels" id="projetos">
+<section id="projetos">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-header reveal">
 
-            <span>Mão na massa</span>
+            <span class="section-label">
+                Mão na massa
+            </span>
 
-            <h2>Projetos que podemos criar</h2>
+            <h2>
+                Ideias que ganham vida.
+            </h2>
 
             <p>
-                O aprendizado ganha vida quando uma ideia
-                vira um projeto.
+                A melhor maneira de aprender tecnologia
+                é transformando conhecimento em algo real.
             </p>
 
         </div>
 
 
-        <div class="project">
+        <div class="projects-grid">
 
-            <div class="project-visual">
-                🤖
-            </div>
 
-            <div class="project-text">
+            <div class="project reveal">
+
+                <div class="project-icon">
+                    🤖
+                </div>
 
                 <h3>
                     Robôs
                 </h3>
 
                 <p>
-                    Construção e programação de robôs capazes
-                    de detectar obstáculos, seguir linhas,
-                    movimentar motores e executar comandos.
+                    Robôs capazes de detectar obstáculos,
+                    seguir linhas, controlar motores
+                    e executar comandos.
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="project reveal">
 
-        <div class="project">
-
-            <div class="project-visual">
-                🚦
-            </div>
-
-            <div class="project-text">
+                <div class="project-icon">
+                    🚦
+                </div>
 
                 <h3>
                     Cidades inteligentes
                 </h3>
 
                 <p>
-                    Projetos que simulam cidades utilizando
-                    sensores, iluminação automática,
-                    semáforos, cancelas e sistemas automatizados.
+                    Semáforos, iluminação automática,
+                    sensores, cancelas e automação.
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="project reveal">
 
-        <div class="project">
-
-            <div class="project-visual">
-                🎮
-            </div>
-
-            <div class="project-text">
+                <div class="project-icon">
+                    🎮
+                </div>
 
                 <h3>
-                    Jogos
+                    Games
                 </h3>
 
                 <p>
-                    Criação de jogos e desafios utilizando
-                    programação, lógica, personagens,
+                    Jogos, desafios, personagens,
                     pontuação e interação.
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="project reveal">
 
-        <div class="project">
-
-            <div class="project-visual">
-                💡
-            </div>
-
-            <div class="project-text">
+                <div class="project-icon">
+                    💡
+                </div>
 
                 <h3>
-                    Projetos eletrônicos
+                    Eletrônica
                 </h3>
 
                 <p>
                     LEDs, botões, sensores, buzzers,
-                    motores e outros componentes podem
-                    ser combinados para criar sistemas interativos.
+                    motores e sistemas interativos.
                 </p>
 
             </div>
@@ -1320,125 +2505,149 @@
      HABILIDADES
 ===================================================== -->
 
-<section>
+<section class="skills">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-header reveal">
 
-            <span>Muito além do código</span>
+            <span class="section-label">
+                Muito além do código
+            </span>
 
-            <h2>O que o aluno desenvolve?</h2>
+            <h2>
+                O que o aluno desenvolve?
+            </h2>
 
         </div>
 
 
-        <div class="cards">
+        <div class="skills-grid">
 
-            <div class="card">
 
-                <div class="card-icon">
+            <div class="skill reveal">
+
+                <div class="skill-icon">
                     🧠
                 </div>
 
-                <h3>
-                    Pensamento lógico
-                </h3>
+                <div>
 
-                <p>
-                    Aprender a dividir problemas grandes
-                    em pequenas soluções.
-                </p>
+                    <h3>
+                        Pensamento lógico
+                    </h3>
+
+                    <p>
+                        Aprender a dividir problemas
+                        em pequenas soluções.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="card">
+            <div class="skill reveal">
 
-                <div class="card-icon">
+                <div class="skill-icon">
                     🎨
                 </div>
 
-                <h3>
-                    Criatividade
-                </h3>
+                <div>
 
-                <p>
-                    Criar novas ideias e encontrar diferentes
-                    maneiras de resolver problemas.
-                </p>
+                    <h3>
+                        Criatividade
+                    </h3>
+
+                    <p>
+                        Criar novas ideias e experimentar.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="card">
+            <div class="skill reveal">
 
-                <div class="card-icon">
+                <div class="skill-icon">
                     🔎
                 </div>
 
-                <h3>
-                    Resolução de problemas
-                </h3>
+                <div>
 
-                <p>
-                    Testar, identificar erros e buscar
-                    novas soluções.
-                </p>
+                    <h3>
+                        Resolução de problemas
+                    </h3>
+
+                    <p>
+                        Testar hipóteses e encontrar soluções.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="card">
+            <div class="skill reveal">
 
-                <div class="card-icon">
+                <div class="skill-icon">
                     🤝
                 </div>
 
-                <h3>
-                    Trabalho em equipe
-                </h3>
+                <div>
 
-                <p>
-                    Desenvolver projetos colaborativamente
-                    e compartilhar ideias.
-                </p>
+                    <h3>
+                        Trabalho em equipe
+                    </h3>
+
+                    <p>
+                        Criar projetos colaborativamente.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="card">
+            <div class="skill reveal">
 
-                <div class="card-icon">
+                <div class="skill-icon">
                     🗣️
                 </div>
 
-                <h3>
-                    Comunicação
-                </h3>
+                <div>
 
-                <p>
-                    Explicar projetos e apresentar
-                    as próprias ideias.
-                </p>
+                    <h3>
+                        Comunicação
+                    </h3>
+
+                    <p>
+                        Explicar e apresentar projetos.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="card">
+            <div class="skill reveal">
 
-                <div class="card-icon">
+                <div class="skill-icon">
                     🚀
                 </div>
 
-                <h3>
-                    Autonomia
-                </h3>
+                <div>
 
-                <p>
-                    Desenvolver confiança para experimentar
-                    e construir projetos próprios.
-                </p>
+                    <h3>
+                        Autonomia
+                    </h3>
+
+                    <p>
+                        Desenvolver confiança para criar.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -1453,94 +2662,100 @@
      FAQ
 ===================================================== -->
 
-<section class="levels" id="faq">
+<section id="faq">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-header reveal">
 
-            <span>Dúvidas</span>
+            <span class="section-label">
+                Dúvidas
+            </span>
 
-            <h2>Perguntas frequentes</h2>
+            <h2>
+                Perguntas frequentes
+            </h2>
 
         </div>
 
 
         <div class="faq">
 
-            <details>
+
+            <details class="reveal">
 
                 <summary>
-                    Precisa saber programar para começar?
+                    Preciso saber programar para começar?
                 </summary>
 
                 <p>
-                    Não. As atividades são planejadas para que
-                    o aluno desenvolva seus conhecimentos
-                    progressivamente.
+                    Não. O aprendizado acontece
+                    progressivamente, começando pelos conceitos
+                    adequados ao nível do aluno.
                 </p>
 
             </details>
 
 
-            <details>
+            <details class="reveal">
 
                 <summary>
-                    A Ctrl+Play é somente programação?
+                    A Ctrl+Play trabalha somente com programação?
                 </summary>
 
                 <p>
-                    Não. A aprendizagem pode envolver programação,
-                    robótica, eletrônica, games, inteligência artificial,
-                    projetos maker e outras áreas da tecnologia.
+                    Não. A experiência pode envolver programação,
+                    robótica, eletrônica, games, inteligência
+                    artificial, projetos maker e outras áreas.
                 </p>
 
             </details>
 
 
-            <details>
+            <details class="reveal">
 
                 <summary>
                     O aluno realmente constrói projetos?
                 </summary>
 
                 <p>
-                    Sim. A proposta é baseada na prática,
-                    permitindo que conceitos sejam aplicados
-                    em projetos e desafios.
+                    Sim. A proposta valoriza a prática,
+                    permitindo transformar conceitos em
+                    projetos e desafios.
                 </p>
 
             </details>
 
 
-            <details>
+            <details class="reveal">
 
                 <summary>
-                    Crianças podem aprender robótica?
+                    O erro faz parte do aprendizado?
                 </summary>
 
                 <p>
-                    Sim. As atividades podem ser adaptadas
-                    ao nível de conhecimento e à faixa etária
-                    do aluno.
+                    Sim. Testar, encontrar problemas,
+                    modificar e tentar novamente faz parte
+                    do processo de criação.
                 </p>
 
             </details>
 
 
-            <details>
+            <details class="reveal">
 
                 <summary>
-                    O que acontece quando o projeto dá errado?
+                    A tecnologia é adequada para crianças?
                 </summary>
 
                 <p>
-                    O erro faz parte do processo. O aluno pode
-                    analisar o problema, testar hipóteses,
-                    modificar o projeto e tentar novamente.
+                    As atividades podem ser adaptadas
+                    ao nível de conhecimento e à faixa
+                    etária do aluno.
                 </p>
 
             </details>
+
 
         </div>
 
@@ -1553,22 +2768,32 @@
      CTA
 ===================================================== -->
 
-<section class="cta">
+<section class="cta" id="contato">
 
     <div class="container">
 
-        <h2>
-            Pronto para criar o futuro?
-        </h2>
+        <div class="cta-box reveal">
 
-        <p>
-            A tecnologia começa com uma ideia.
-            O próximo projeto pode ser o seu.
-        </p>
+            <h2>
+                E se a próxima grande ideia
+                começar com você?
+            </h2>
 
-        <a href="#inicio" class="btn btn-primary">
-            Voltar ao início 🚀
-        </a>
+            <p>
+                Descubra, experimente, construa
+                e transforme suas ideias em tecnologia.
+            </p>
+
+
+            <a
+                href="#inicio"
+                class="button button-primary">
+
+                🚀 Começar a explorar
+
+            </a>
+
+        </div>
 
     </div>
 
@@ -1589,13 +2814,144 @@
         Tecnologia • Criatividade • Inovação
     </p>
 
-    <p style="margin-top: 10px;">
-        © 2026 Ctrl+Play. Todos os direitos reservados.
+    <p style="margin-top:8px;">
+        © 2026 Ctrl+Play
     </p>
 
 </footer>
 
 
+<!-- =====================================================
+     BOTÃO VOLTAR AO TOPO
+===================================================== -->
+
+<button
+    class="top-button"
+    id="topButton"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Voltar ao topo">
+
+    ↑
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("menu");
+
+        menu.classList.toggle("mobile-open");
+
+    }
+
+
+    /* Fechar menu ao clicar */
+
+    document
+        .querySelectorAll("#menu a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .getElementById("menu")
+                        .classList
+                        .remove("mobile-open");
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       ANIMAÇÃO AO ROLAR
+    ===================================================== */
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry
+                            .target
+                            .classList
+                            .add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+    /* =====================================================
+       BOTÃO VOLTAR AO TOPO
+    ===================================================== */
+
+    const topButton =
+        document.getElementById("topButton");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (window.scrollY > 500) {
+
+                topButton
+                    .classList
+                    .add("show");
+
+            } else {
+
+                topButton
+                    .classList
+                    .remove("show");
+
+            }
+
+        }
+    );
+
+
+</script>
+
+
 </body>
+
 </html>
 ```
