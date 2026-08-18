@@ -1,0 +1,1601 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ctrl+Play | Tecnologia que transforma</title>
+
+    <meta name="description"
+          content="Conheça a Ctrl+Play, uma escola de tecnologia para crianças e adolescentes. Programação, robótica, criatividade e inovação.">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =====================================================
+           VARIÁVEIS
+        ===================================================== */
+
+        :root {
+            --azul: #1597ff;
+            --azul-escuro: #07111f;
+            --azul-card: #0d1d31;
+            --azul-claro: #55c7ff;
+            --roxo: #7c4dff;
+            --verde: #00d084;
+            --amarelo: #ffd43b;
+            --branco: #ffffff;
+            --cinza: #b8c4d4;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 25px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--azul);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--cinza);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul-claro);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 130px 20px 80px;
+
+            background:
+                radial-gradient(circle at 20% 30%, rgba(21,151,255,0.25), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(124,77,255,0.22), transparent 30%),
+                #07111f;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+            margin-bottom: 25px;
+
+            border-radius: 30px;
+
+            background: rgba(21,151,255,0.12);
+            border: 1px solid rgba(21,151,255,0.35);
+
+            color: var(--azul-claro);
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--azul);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+
+            color: var(--cinza);
+            font-size: 19px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--azul);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(21,151,255,0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+
+        /* =====================================================
+           SEÇÕES
+        ===================================================== */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: var(--azul);
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: var(--cinza);
+            max-width: 650px;
+            margin: 15px auto 0;
+        }
+
+
+        /* =====================================================
+           O QUE É
+        ===================================================== */
+
+        .about {
+            background: #091827;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--cinza);
+            margin-bottom: 15px;
+        }
+
+        .about-box {
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(145deg, #102b45, #0b1829);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .about-box .big-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           CARDS
+        ===================================================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--azul-card);
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(21,151,255,0.4);
+        }
+
+        .card-icon {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: var(--cinza);
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           NÍVEIS
+        ===================================================== */
+
+        .levels {
+            background: #091827;
+        }
+
+        .level-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+
+            font-size: 45px;
+            font-weight: bold;
+
+            color: rgba(255,255,255,0.05);
+        }
+
+        .level-card h3 {
+            color: var(--azul-claro);
+        }
+
+        .level-tag {
+            display: inline-block;
+
+            margin-bottom: 15px;
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(21,151,255,0.12);
+            color: var(--azul-claro);
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           TECNOLOGIAS
+        ===================================================== */
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .tech {
+            padding: 25px;
+            text-align: center;
+
+            background: var(--azul-card);
+
+            border-radius: 15px;
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+        .tech:hover {
+            transform: scale(1.03);
+        }
+
+        .tech-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =====================================================
+           PROJETOS
+        ===================================================== */
+
+        .project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+
+            margin-bottom: 50px;
+        }
+
+        .project:nth-child(even) {
+            direction: rtl;
+        }
+
+        .project:nth-child(even) .project-text {
+            direction: ltr;
+        }
+
+        .project-visual {
+            min-height: 280px;
+
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 100px;
+
+            background:
+                radial-gradient(circle, rgba(21,151,255,0.25), transparent 60%),
+                #0c1b2d;
+
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .project-text h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .project-text p {
+            color: var(--cinza);
+        }
+
+
+        /* =====================================================
+           METODOLOGIA
+        ===================================================== */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background: var(--azul);
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .step p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        details {
+            background: var(--azul-card);
+
+            margin-bottom: 12px;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        details p {
+            color: var(--cinza);
+            margin-top: 15px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center, rgba(21,151,255,0.25), transparent 55%),
+                #091827;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: var(--cinza);
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 40px 20px;
+
+            background: #050c15;
+
+            text-align: center;
+        }
+
+        footer .logo {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #7f8da0;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .about-grid,
+            .project {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .project:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#inicio" class="logo">
+            Ctrl<span>+</span>Play
+        </a>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#niveis">Níveis</a>
+            <a href="#tecnologias">Tecnologias</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🚀 Tecnologia • Criatividade • Futuro
+        </div>
+
+        <h1>
+            O futuro começa quando você aperta
+            <span>Ctrl + Play</span>
+        </h1>
+
+        <p>
+            Um espaço onde crianças e adolescentes aprendem tecnologia
+            criando, experimentando e transformando ideias em projetos.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#niveis" class="btn btn-primary">
+                Conhecer os níveis
+            </a>
+
+            <a href="#projetos" class="btn btn-secondary">
+                Ver projetos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<section class="about" id="sobre">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Sobre</span>
+
+            <h2>O que é a Ctrl+Play?</h2>
+
+            <p>
+                Aprender tecnologia pode ser muito mais divertido
+                quando o aluno coloca a mão na massa.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Aprender criando.</h3>
+
+                <p>
+                    A Ctrl+Play é uma proposta de educação tecnológica
+                    voltada para crianças e adolescentes.
+                </p>
+
+                <p>
+                    Durante as atividades, os alunos desenvolvem projetos
+                    envolvendo programação, robótica, eletrônica,
+                    criatividade e resolução de problemas.
+                </p>
+
+                <p>
+                    A ideia é transformar o aluno de consumidor de
+                    tecnologia em alguém capaz de criar e entender
+                    como a tecnologia funciona.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="big-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Tecnologia na prática
+                </h3>
+
+                <p>
+                    Em vez de apenas assistir a uma explicação,
+                    o aluno experimenta, testa, erra, corrige
+                    e constrói seus próprios projetos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMO FUNCIONA
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Metodologia</span>
+
+            <h2>Como funciona?</h2>
+
+            <p>
+                O aprendizado acontece através de desafios e projetos.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Descobrir</h3>
+
+                <p>
+                    O aluno conhece uma nova tecnologia
+                    ou conceito.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Experimentar</h3>
+
+                <p>
+                    Coloca o conhecimento em prática
+                    através de desafios.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Criar</h3>
+
+                <p>
+                    Desenvolve seu próprio projeto
+                    e encontra soluções.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">4</div>
+
+                <h3>Apresentar</h3>
+
+                <p>
+                    Mostra o projeto e explica
+                    como ele funciona.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NÍVEIS
+===================================================== -->
+
+<section class="levels" id="niveis">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Aprendizado</span>
+
+            <h2>Níveis de aprendizagem</h2>
+
+            <p>
+                O conhecimento evolui junto com o aluno.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    01
+                </div>
+
+                <span class="level-tag">
+                    INICIANTE
+                </span>
+
+                <div class="card-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    Descobridor
+                </h3>
+
+                <p>
+                    Primeiros contatos com lógica,
+                    criatividade, programação visual
+                    e conceitos básicos de tecnologia.
+                </p>
+
+            </div>
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    02
+                </div>
+
+                <span class="level-tag">
+                    BÁSICO
+                </span>
+
+                <div class="card-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Criador
+                </h3>
+
+                <p>
+                    O aluno começa a criar jogos,
+                    animações e projetos utilizando
+                    conceitos de programação.
+                </p>
+
+            </div>
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    03
+                </div>
+
+                <span class="level-tag">
+                    INTERMEDIÁRIO
+                </span>
+
+                <div class="card-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Inventor
+                </h3>
+
+                <p>
+                    Projetos mais complexos envolvendo
+                    programação, sensores, eletrônica
+                    e automação.
+                </p>
+
+            </div>
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    04
+                </div>
+
+                <span class="level-tag">
+                    AVANÇADO
+                </span>
+
+                <div class="card-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Engenheiro
+                </h3>
+
+                <p>
+                    Desenvolvimento de robôs,
+                    sistemas automatizados e projetos
+                    tecnológicos completos.
+                </p>
+
+            </div>
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    05
+                </div>
+
+                <span class="level-tag">
+                    DESAFIO
+                </span>
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Inovador
+                </h3>
+
+                <p>
+                    O aluno combina diferentes tecnologias
+                    para desenvolver soluções próprias
+                    para problemas reais.
+                </p>
+
+            </div>
+
+
+            <div class="card level-card">
+
+                <div class="level-number">
+                    ★
+                </div>
+
+                <span class="level-tag">
+                    PROJETO
+                </span>
+
+                <div class="card-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Maker
+                </h3>
+
+                <p>
+                    Momento de transformar uma ideia
+                    em um projeto completo e apresentar
+                    a solução criada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TECNOLOGIAS
+===================================================== -->
+
+<section id="tecnologias">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Universo tecnológico</span>
+
+            <h2>O que podemos aprender?</h2>
+
+            <p>
+                Diversas áreas da tecnologia podem fazer parte
+                da jornada de aprendizagem.
+            </p>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+            <div class="tech">
+
+                <div class="tech-icon">💻</div>
+
+                <h3>Programação</h3>
+
+                <p>
+                    Lógica e desenvolvimento.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">🤖</div>
+
+                <h3>Robótica</h3>
+
+                <p>
+                    Robôs e automação.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">⚡</div>
+
+                <h3>Eletrônica</h3>
+
+                <p>
+                    Sensores e circuitos.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">🎮</div>
+
+                <h3>Games</h3>
+
+                <p>
+                    Jogos e experiências.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">🧠</div>
+
+                <h3>IA</h3>
+
+                <p>
+                    Inteligência artificial.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">🌐</div>
+
+                <h3>Web</h3>
+
+                <p>
+                    Sites e aplicações.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">📱</div>
+
+                <h3>Apps</h3>
+
+                <p>
+                    Aplicativos e interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="tech">
+
+                <div class="tech-icon">🛠️</div>
+
+                <h3>Maker</h3>
+
+                <p>
+                    Criar, testar e construir.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJETOS
+===================================================== -->
+
+<section class="levels" id="projetos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Mão na massa</span>
+
+            <h2>Projetos que podemos criar</h2>
+
+            <p>
+                O aprendizado ganha vida quando uma ideia
+                vira um projeto.
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-visual">
+                🤖
+            </div>
+
+            <div class="project-text">
+
+                <h3>
+                    Robôs
+                </h3>
+
+                <p>
+                    Construção e programação de robôs capazes
+                    de detectar obstáculos, seguir linhas,
+                    movimentar motores e executar comandos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-visual">
+                🚦
+            </div>
+
+            <div class="project-text">
+
+                <h3>
+                    Cidades inteligentes
+                </h3>
+
+                <p>
+                    Projetos que simulam cidades utilizando
+                    sensores, iluminação automática,
+                    semáforos, cancelas e sistemas automatizados.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-visual">
+                🎮
+            </div>
+
+            <div class="project-text">
+
+                <h3>
+                    Jogos
+                </h3>
+
+                <p>
+                    Criação de jogos e desafios utilizando
+                    programação, lógica, personagens,
+                    pontuação e interação.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-visual">
+                💡
+            </div>
+
+            <div class="project-text">
+
+                <h3>
+                    Projetos eletrônicos
+                </h3>
+
+                <p>
+                    LEDs, botões, sensores, buzzers,
+                    motores e outros componentes podem
+                    ser combinados para criar sistemas interativos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HABILIDADES
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Muito além do código</span>
+
+            <h2>O que o aluno desenvolve?</h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Pensamento lógico
+                </h3>
+
+                <p>
+                    Aprender a dividir problemas grandes
+                    em pequenas soluções.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Criatividade
+                </h3>
+
+                <p>
+                    Criar novas ideias e encontrar diferentes
+                    maneiras de resolver problemas.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Resolução de problemas
+                </h3>
+
+                <p>
+                    Testar, identificar erros e buscar
+                    novas soluções.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Trabalho em equipe
+                </h3>
+
+                <p>
+                    Desenvolver projetos colaborativamente
+                    e compartilhar ideias.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🗣️
+                </div>
+
+                <h3>
+                    Comunicação
+                </h3>
+
+                <p>
+                    Explicar projetos e apresentar
+                    as próprias ideias.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Autonomia
+                </h3>
+
+                <p>
+                    Desenvolver confiança para experimentar
+                    e construir projetos próprios.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="levels" id="faq">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Dúvidas</span>
+
+            <h2>Perguntas frequentes</h2>
+
+        </div>
+
+
+        <div class="faq">
+
+            <details>
+
+                <summary>
+                    Precisa saber programar para começar?
+                </summary>
+
+                <p>
+                    Não. As atividades são planejadas para que
+                    o aluno desenvolva seus conhecimentos
+                    progressivamente.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    A Ctrl+Play é somente programação?
+                </summary>
+
+                <p>
+                    Não. A aprendizagem pode envolver programação,
+                    robótica, eletrônica, games, inteligência artificial,
+                    projetos maker e outras áreas da tecnologia.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    O aluno realmente constrói projetos?
+                </summary>
+
+                <p>
+                    Sim. A proposta é baseada na prática,
+                    permitindo que conceitos sejam aplicados
+                    em projetos e desafios.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Crianças podem aprender robótica?
+                </summary>
+
+                <p>
+                    Sim. As atividades podem ser adaptadas
+                    ao nível de conhecimento e à faixa etária
+                    do aluno.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    O que acontece quando o projeto dá errado?
+                </summary>
+
+                <p>
+                    O erro faz parte do processo. O aluno pode
+                    analisar o problema, testar hipóteses,
+                    modificar o projeto e tentar novamente.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Pronto para criar o futuro?
+        </h2>
+
+        <p>
+            A tecnologia começa com uma ideia.
+            O próximo projeto pode ser o seu.
+        </p>
+
+        <a href="#inicio" class="btn btn-primary">
+            Voltar ao início 🚀
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="logo">
+        Ctrl<span>+</span>Play
+    </div>
+
+    <p>
+        Tecnologia • Criatividade • Inovação
+    </p>
+
+    <p style="margin-top: 10px;">
+        © 2026 Ctrl+Play. Todos os direitos reservados.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
+```
