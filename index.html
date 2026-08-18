@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,22 +5,20 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color"
-content="#6C4DFF">
+<meta name="theme-color" content="#0B0F1A">
 
 <meta name="description"
-content="Ctrl+Play — tecnologia, programação e robótica para crianças e adolescentes.">
+content="Ctrl+Play — programação, robótica, games, eletrônica e tecnologia para crianças e adolescentes.">
 
-<title>Ctrl+Play | O futuro começa brincando</title>
+<title>Ctrl+Play | Tecnologia que você pode criar</title>
 
 
 <style>
 
 /* =========================================================
-   RESET
+   CONFIGURAÇÕES GERAIS
 ========================================================= */
 
 *{
@@ -42,9 +39,9 @@ body{
     Arial,
     sans-serif;
 
-    background:#FFF9F0;
+    background:#080B14;
 
-    color:#182033;
+    color:#F5F7FF;
 
     overflow-x:hidden;
 }
@@ -65,32 +62,43 @@ button{
 
 :root{
 
-    --purple:#6C4DFF;
-    --purple-dark:#4D35D4;
+    --bg:#080B14;
 
-    --blue:#28A9FF;
+    --bg2:#0D1220;
+
+    --card:#111827;
+
+    --card2:#151D30;
+
+    --purple:#7657FF;
+
+    --purple-light:#9A86FF;
+
+    --blue:#24B8FF;
+
+    --cyan:#41E7FF;
 
     --yellow:#FFD83D;
 
-    --pink:#FF5F8F;
+    --pink:#FF5F9F;
 
-    --green:#31C878;
+    --green:#35D58A;
 
     --orange:#FF8A3D;
 
-    --dark:#182033;
+    --white:#F5F7FF;
 
-    --cream:#FFF9F0;
+    --text:#F5F7FF;
 
-    --white:#FFFFFF;
+    --muted:#9BA6BA;
 
-    --gray:#647083;
+    --border:#252E42;
 
 }
 
 
 /* =========================================================
-   FUNDO DECORATIVO
+   FUNDO
 ========================================================= */
 
 body::before{
@@ -99,19 +107,21 @@ body::before{
 
     position:fixed;
 
-    width:350px;
-    height:350px;
+    width:450px;
+    height:450px;
 
     border-radius:50%;
 
-    background:#DCCFFF;
+    background:#5D42FF;
 
-    filter:blur(80px);
+    filter:blur(160px);
 
-    top:-150px;
-    left:-150px;
+    opacity:.13;
 
-    opacity:.45;
+    top:-180px;
+    left:-180px;
+
+    pointer-events:none;
 
     z-index:-2;
 }
@@ -123,21 +133,61 @@ body::after{
 
     position:fixed;
 
-    width:300px;
-    height:300px;
+    width:400px;
+    height:400px;
 
     border-radius:50%;
 
-    background:#FFE79A;
+    background:#00C8FF;
 
-    filter:blur(80px);
+    filter:blur(160px);
 
-    right:-150px;
-    bottom:-100px;
+    opacity:.08;
 
-    opacity:.4;
+    right:-180px;
+    bottom:-150px;
+
+    pointer-events:none;
 
     z-index:-2;
+}
+
+
+/* =========================================================
+   GRID DECORATIVO
+========================================================= */
+
+.grid-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    );
+
+    background-size:45px 45px;
+
+    mask-image:
+    linear-gradient(
+        to bottom,
+        black,
+        transparent 80%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
 }
 
 
@@ -156,13 +206,13 @@ header{
 
     z-index:1000;
 
-    padding:12px 18px;
+    padding:14px 18px;
 }
 
 
 .navbar{
 
-    max-width:1150px;
+    max-width:1180px;
 
     height:66px;
 
@@ -176,16 +226,16 @@ header{
 
     justify-content:space-between;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(13,18,32,.90);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(18px);
 
-    border:2px solid #182033;
+    border:1px solid #303B54;
 
-    border-radius:20px;
+    border-radius:18px;
 
     box-shadow:
-    5px 5px 0 #182033;
+    0 12px 40px rgba(0,0,0,.35);
 }
 
 
@@ -193,7 +243,7 @@ header{
 
 .logo{
 
-    font-size:24px;
+    font-size:25px;
 
     font-weight:1000;
 
@@ -214,23 +264,25 @@ nav{
 
     align-items:center;
 
-    gap:22px;
+    gap:24px;
 }
 
+
 nav a{
+
+    color:#AAB4C7;
 
     font-size:13px;
 
     font-weight:800;
 
-    color:#505B6D;
-
     transition:.2s;
 }
 
+
 nav a:hover{
 
-    color:var(--purple);
+    color:white;
 
     transform:translateY(-2px);
 }
@@ -238,17 +290,16 @@ nav a:hover{
 
 .nav-contact{
 
-    padding:10px 15px;
-
-    background:var(--purple);
+    padding:10px 16px;
 
     color:white !important;
 
-    border-radius:12px;
+    background:var(--purple);
 
-    border:2px solid #182033;
+    border-radius:11px;
 
-    box-shadow:3px 3px 0 #182033;
+    box-shadow:
+    0 0 20px rgba(118,87,255,.25);
 }
 
 
@@ -262,11 +313,11 @@ nav a:hover{
 
     background:transparent;
 
-    font-size:26px;
+    color:white;
+
+    font-size:27px;
 
     cursor:pointer;
-
-    color:#182033;
 }
 
 
@@ -279,7 +330,7 @@ nav a:hover{
     min-height:100vh;
 
     padding:
-    150px 20px 90px;
+    155px 20px 90px;
 
     position:relative;
 
@@ -293,7 +344,7 @@ nav a:hover{
 
 .hero-container{
 
-    max-width:1150px;
+    max-width:1180px;
 
     width:100%;
 
@@ -310,7 +361,7 @@ nav a:hover{
 }
 
 
-/* HERO TEXTO */
+/* TEXTO */
 
 .hero-text{
 
@@ -326,23 +377,23 @@ nav a:hover{
 
     align-items:center;
 
-    gap:7px;
+    gap:8px;
 
     padding:9px 14px;
 
-    background:var(--yellow);
+    background:
+    rgba(118,87,255,.12);
 
-    border:2px solid #182033;
+    border:1px solid
+    rgba(154,134,255,.45);
 
     border-radius:50px;
 
-    box-shadow:4px 4px 0 #182033;
+    color:#B9AEFF;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:1000;
-
-    transform:rotate(-2deg);
 
     margin-bottom:25px;
 }
@@ -351,19 +402,21 @@ nav a:hover{
 .hero h1{
 
     font-size:
-    clamp(48px,7vw,78px);
+    clamp(48px,7vw,82px);
 
-    line-height:.95;
+    line-height:.94;
 
-    letter-spacing:-4px;
+    letter-spacing:-5px;
 
-    margin-bottom:25px;
+    max-width:750px;
+
+    margin-bottom:28px;
 }
 
 
 .hero h1 span{
 
-    color:var(--purple);
+    color:var(--purple-light);
 
     position:relative;
 }
@@ -375,38 +428,36 @@ nav a:hover{
 
     position:absolute;
 
-    height:9px;
+    height:6px;
 
     left:0;
     right:0;
 
-    bottom:-4px;
+    bottom:-3px;
 
     background:var(--yellow);
 
-    border-radius:20px;
+    border-radius:10px;
 
-    transform:rotate(-2deg);
-
-    z-index:-1;
+    opacity:.9;
 }
 
 
 .hero-description{
 
-    max-width:590px;
+    max-width:620px;
 
     font-size:18px;
 
-    line-height:1.65;
+    line-height:1.7;
 
-    color:#5D6879;
+    color:var(--muted);
 
     margin-bottom:30px;
 }
 
 
-/* HERO BOTÕES */
+/* BOTÕES */
 
 .hero-buttons{
 
@@ -430,15 +481,15 @@ nav a:hover{
 
     padding:14px 20px;
 
-    border-radius:14px;
+    border-radius:13px;
 
     font-size:14px;
 
     font-weight:1000;
 
-    border:2px solid #182033;
+    border:1px solid transparent;
 
-    transition:.2s;
+    transition:.25s;
 
     cursor:pointer;
 }
@@ -450,16 +501,20 @@ nav a:hover{
 
     color:white;
 
-    box-shadow:4px 4px 0 #182033;
+    box-shadow:
+    0 8px 25px
+    rgba(118,87,255,.25);
 }
 
 
 .button-primary:hover{
 
     transform:
-    translate(2px,2px);
+    translateY(-3px);
 
-    box-shadow:2px 2px 0 #182033;
+    box-shadow:
+    0 12px 35px
+    rgba(118,87,255,.4);
 }
 
 
@@ -467,23 +522,19 @@ nav a:hover{
 
     background:var(--yellow);
 
-    color:#182033;
-
-    box-shadow:4px 4px 0 #182033;
+    color:#111827;
 }
 
 
 .button-yellow:hover{
 
     transform:
-    translate(2px,2px);
-
-    box-shadow:2px 2px 0 #182033;
+    translateY(-3px);
 }
 
 
 /* =========================================================
-   PERSONAGEM HERO
+   HERO PERSONAGEM
 ========================================================= */
 
 .hero-character{
@@ -502,22 +553,30 @@ nav a:hover{
 
 .character-circle{
 
-    width:390px;
-    height:390px;
+    width:400px;
+    height:400px;
 
-    border-radius:48% 52% 45% 55%;
+    border-radius:45% 55% 50% 50%;
 
     background:
-    linear-gradient(
-        145deg,
-        #8A70FF,
-        #5C42E8
+
+    radial-gradient(
+        circle at 35% 30%,
+        #9A86FF,
+        #7657FF 45%,
+        #422BB8
     );
 
-    border:4px solid #182033;
+    border:1px solid
+    rgba(255,255,255,.18);
 
     box-shadow:
-    12px 12px 0 #182033;
+
+    0 0 80px
+    rgba(118,87,255,.25),
+
+    inset 0 0 50px
+    rgba(255,255,255,.08);
 
     display:flex;
 
@@ -535,15 +594,19 @@ nav a:hover{
 @keyframes characterFloat{
 
     0%,100%{
+
         transform:
         rotate(3deg)
         translateY(0);
+
     }
 
     50%{
+
         transform:
-        rotate(0deg)
+        rotate(-1deg)
         translateY(-12px);
+
     }
 }
 
@@ -554,7 +617,8 @@ nav a:hover{
 
     filter:
     drop-shadow(
-    5px 8px 0 rgba(24,32,51,.2)
+        0 15px 20px
+        rgba(0,0,0,.3)
     );
 }
 
@@ -565,60 +629,47 @@ nav a:hover{
 
     position:absolute;
 
-    padding:13px 16px;
+    padding:13px 17px;
 
-    background:white;
+    background:#111827;
 
-    border:3px solid #182033;
+    border:1px solid #39445B;
 
-    border-radius:18px;
+    border-radius:15px;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:1000;
 
-    box-shadow:4px 4px 0 #182033;
-}
+    color:white;
 
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.3);
 
-.speech::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:14px;
-    height:14px;
-
-    background:white;
-
-    border-right:3px solid #182033;
-
-    border-bottom:3px solid #182033;
-
-    transform:rotate(45deg);
-
-    bottom:-9px;
-
-    left:25px;
+    z-index:3;
 }
 
 
 .speech.one{
 
-    top:35px;
-    right:0;
+    top:40px;
 
-    transform:rotate(4deg);
+    right:-5px;
+
+    transform:rotate(3deg);
 }
 
 
 .speech.two{
 
-    bottom:60px;
-    left:0;
+    bottom:55px;
 
-    transform:rotate(-4deg);
+    left:-5px;
+
+    transform:rotate(-3deg);
+
+    color:#C6BEFF;
 }
 
 
@@ -628,7 +679,9 @@ nav a:hover{
 
     position:absolute;
 
-    font-size:35px;
+    font-size:32px;
+
+    color:var(--yellow);
 
     animation:
     starFloat 3s ease-in-out infinite;
@@ -638,14 +691,14 @@ nav a:hover{
 .star.one{
 
     top:25px;
-    left:30px;
+    left:35px;
 }
 
 
 .star.two{
 
-    bottom:40px;
-    right:30px;
+    bottom:35px;
+    right:25px;
 
     animation-delay:1s;
 }
@@ -654,32 +707,38 @@ nav a:hover{
 @keyframes starFloat{
 
     0%,100%{
+
         transform:
         translateY(0)
         rotate(0);
+
     }
 
     50%{
+
         transform:
         translateY(-10px)
         rotate(15deg);
+
     }
 }
 
 
 /* =========================================================
-   SEÇÃO
+   SEÇÕES
 ========================================================= */
 
 section{
 
-    padding:95px 20px;
+    padding:100px 20px;
+
+    position:relative;
 }
 
 
 .container{
 
-    max-width:1150px;
+    max-width:1180px;
 
     margin:auto;
 }
@@ -687,10 +746,10 @@ section{
 
 .section-title{
 
-    max-width:750px;
+    max-width:760px;
 
     margin:
-    0 auto 50px;
+    0 auto 55px;
 
     text-align:center;
 }
@@ -702,40 +761,44 @@ section{
 
     padding:7px 12px;
 
-    background:#E8E2FF;
+    background:
+    rgba(118,87,255,.12);
 
-    color:var(--purple);
+    border:1px solid
+    rgba(118,87,255,.3);
+
+    color:#B5A9FF;
 
     border-radius:30px;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:1000;
 
     text-transform:uppercase;
 
-    letter-spacing:1px;
+    letter-spacing:1.5px;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 }
 
 
 .section-title h2{
 
     font-size:
-    clamp(32px,5vw,50px);
+    clamp(32px,5vw,52px);
 
     line-height:1;
 
-    letter-spacing:-2px;
+    letter-spacing:-2.5px;
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 }
 
 
 .section-title p{
 
-    color:var(--gray);
+    color:var(--muted);
 
     line-height:1.7;
 }
@@ -747,13 +810,11 @@ section{
 
 .about{
 
-    background:white;
+    background:#0C101B;
 
-    border-top:
-    3px solid #182033;
+    border-top:1px solid #202A3C;
 
-    border-bottom:
-    3px solid #182033;
+    border-bottom:1px solid #202A3C;
 }
 
 
@@ -764,9 +825,9 @@ section{
     grid-template-columns:
     1fr 1fr;
 
-    gap:45px;
+    gap:25px;
 
-    align-items:center;
+    align-items:stretch;
 }
 
 
@@ -774,16 +835,20 @@ section{
 
     padding:35px;
 
-    border:3px solid #182033;
+    background:
+    linear-gradient(
+        145deg,
+        #151D30,
+        #101622
+    );
 
-    border-radius:25px;
+    border:1px solid #303B53;
 
-    background:#F0ECFF;
+    border-radius:23px;
 
     box-shadow:
-    8px 8px 0 #182033;
-
-    transform:rotate(-1deg);
+    0 20px 60px
+    rgba(0,0,0,.2);
 }
 
 
@@ -797,7 +862,7 @@ section{
 
 .about-card p{
 
-    color:#5E6878;
+    color:var(--muted);
 
     line-height:1.75;
 
@@ -809,7 +874,7 @@ section{
 
     display:grid;
 
-    gap:13px;
+    gap:12px;
 
     margin-top:20px;
 }
@@ -837,32 +902,39 @@ section{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    background:var(--green);
+    background:
+    rgba(53,213,138,.12);
 
-    border:2px solid #182033;
+    border:1px solid
+    rgba(53,213,138,.35);
 
-    border-radius:9px;
+    color:var(--green);
+
+    border-radius:8px;
 }
 
 
-/* INFO PAIS */
+/* PAIS */
 
 .parents-card{
 
     padding:35px;
 
-    border:3px solid #182033;
+    background:
 
-    border-radius:25px;
+    linear-gradient(
+        145deg,
+        rgba(255,216,61,.08),
+        rgba(255,216,61,.02)
+    );
 
-    background:#FFF2B8;
+    border:1px solid
+    rgba(255,216,61,.25);
 
-    box-shadow:
-    8px 8px 0 #182033;
-
-    transform:rotate(1deg);
+    border-radius:23px;
 }
 
 
@@ -876,7 +948,7 @@ section{
 
 .parents-card p{
 
-    color:#5D6674;
+    color:var(--muted);
 
     line-height:1.75;
 
@@ -886,17 +958,17 @@ section{
 
 .parents-card strong{
 
-    color:#182033;
+    color:white;
 }
 
 
 /* =========================================================
-   JORNADA / NÍVEIS
+   NÍVEIS
 ========================================================= */
 
 .journey{
 
-    background:#F7F2EA;
+    background:#080B14;
 }
 
 
@@ -907,7 +979,7 @@ section{
     grid-template-columns:
     repeat(4,1fr);
 
-    gap:18px;
+    gap:16px;
 }
 
 
@@ -915,42 +987,58 @@ section{
 
     padding:25px 20px;
 
-    border:3px solid #182033;
+    background:
+    linear-gradient(
+        145deg,
+        #121928,
+        #0E1420
+    );
+
+    border:1px solid #2B354B;
 
     border-radius:20px;
 
-    background:white;
-
-    box-shadow:
-    5px 5px 0 #182033;
-
     transition:.25s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.level::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    filter:blur(50px);
+
+    opacity:.1;
+
+    right:-30px;
+    top:-30px;
 }
 
 
 .level:hover{
 
     transform:
-    translateY(-8px)
-    rotate(-1deg);
-}
+    translateY(-8px);
 
+    border-color:
+    rgba(118,87,255,.7);
 
-.level:nth-child(2){
-
-    background:#E7F5FF;
-}
-
-
-.level:nth-child(3){
-
-    background:#F0E9FF;
-}
-
-
-.level:nth-child(4){
-
-    background:#FFF1B5;
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.3);
 }
 
 
@@ -962,15 +1050,18 @@ section{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border:2px solid #182033;
+    background:
+    rgba(118,87,255,.15);
 
-    border-radius:13px;
+    border:1px solid
+    rgba(118,87,255,.5);
 
-    background:var(--purple);
+    border-radius:12px;
 
-    color:white;
+    color:#B8ACFF;
 
     font-weight:1000;
 
@@ -988,7 +1079,7 @@ section{
 
 .level p{
 
-    color:#697384;
+    color:var(--muted);
 
     font-size:13px;
 
@@ -1002,45 +1093,15 @@ section{
 
 .tech{
 
-    background:#6C4DFF;
+    background:
 
-    color:white;
+    radial-gradient(
+        circle at 50% 0%,
+        rgba(118,87,255,.16),
+        transparent 50%
+    ),
 
-    position:relative;
-
-    overflow:hidden;
-}
-
-
-.tech::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:200px;
-    height:200px;
-
-    border-radius:50%;
-
-    background:#8B74FF;
-
-    right:-80px;
-    top:-80px;
-}
-
-
-.tech .section-tag{
-
-    background:#FFD83D;
-
-    color:#182033;
-}
-
-
-.tech .section-title p{
-
-    color:#E6E1FF;
+    #0D1220;
 }
 
 
@@ -1052,37 +1113,34 @@ section{
     repeat(4,1fr);
 
     gap:15px;
-
-    position:relative;
 }
 
 
 .tech-card{
 
-    padding:25px 18px;
+    padding:27px 18px;
 
     text-align:center;
 
-    background:white;
+    background:#111827;
 
-    color:#182033;
+    border:1px solid #2B3549;
 
-    border:3px solid #182033;
+    border-radius:18px;
 
-    border-radius:19px;
-
-    box-shadow:
-    5px 5px 0 #182033;
-
-    transition:.2s;
+    transition:.25s;
 }
 
 
 .tech-card:hover{
 
     transform:
-    translateY(-6px)
-    rotate(-1deg);
+    translateY(-7px);
+
+    border-color:
+    rgba(118,87,255,.65);
+
+    background:#151E31;
 }
 
 
@@ -1102,7 +1160,7 @@ section{
 
 .tech-card p{
 
-    color:#748093;
+    color:#758196;
 
     font-size:12px;
 
@@ -1116,7 +1174,7 @@ section{
 
 .projects{
 
-    background:white;
+    background:#080B14;
 }
 
 
@@ -1127,19 +1185,19 @@ section{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:20px;
+    gap:18px;
 }
 
 
 .project{
 
-    min-height:270px;
+    min-height:280px;
 
     padding:30px;
 
-    border:3px solid #182033;
+    border:1px solid #2A3448;
 
-    border-radius:25px;
+    border-radius:24px;
 
     position:relative;
 
@@ -1150,9 +1208,6 @@ section{
     flex-direction:column;
 
     justify-content:flex-end;
-
-    box-shadow:
-    7px 7px 0 #182033;
 
     transition:.25s;
 }
@@ -1167,25 +1222,45 @@ section{
 
 .project:nth-child(1){
 
-    background:#DDF2FF;
+    background:
+    linear-gradient(
+        145deg,
+        #111B2D,
+        #0B111D
+    );
 }
 
 
 .project:nth-child(2){
 
-    background:#FFF0A8;
+    background:
+    linear-gradient(
+        145deg,
+        #17192D,
+        #0D101D
+    );
 }
 
 
 .project:nth-child(3){
 
-    background:#E9E0FF;
+    background:
+    linear-gradient(
+        145deg,
+        #1B172E,
+        #0F0D1B
+    );
 }
 
 
 .project:nth-child(4){
 
-    background:#DDF8E9;
+    background:
+    linear-gradient(
+        145deg,
+        #10251F,
+        #0B1613
+    );
 }
 
 
@@ -1197,6 +1272,8 @@ section{
     right:25px;
 
     font-size:85px;
+
+    opacity:.9;
 }
 
 
@@ -1212,7 +1289,7 @@ section{
 
     max-width:520px;
 
-    color:#5D6877;
+    color:var(--muted);
 
     font-size:14px;
 
@@ -1226,11 +1303,11 @@ section{
 
 .skills{
 
-    background:#FFF4C9;
+    background:#0D1220;
 
-    border-top:3px solid #182033;
+    border-top:1px solid #202A3C;
 
-    border-bottom:3px solid #182033;
+    border-bottom:1px solid #202A3C;
 }
 
 
@@ -1241,7 +1318,7 @@ section{
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:16px;
+    gap:15px;
 }
 
 
@@ -1249,20 +1326,28 @@ section{
 
     padding:23px;
 
-    background:white;
+    background:#111827;
 
-    border:3px solid #182033;
+    border:1px solid #2A3448;
 
     border-radius:18px;
-
-    box-shadow:
-    5px 5px 0 #182033;
 
     display:flex;
 
     gap:15px;
 
     align-items:flex-start;
+
+    transition:.2s;
+}
+
+
+.skill:hover{
+
+    transform:
+    translateY(-5px);
+
+    border-color:#4A5874;
 }
 
 
@@ -1282,7 +1367,7 @@ section{
 
 .skill p{
 
-    color:#697384;
+    color:#7E899C;
 
     font-size:12px;
 
@@ -1296,9 +1381,15 @@ section{
 
 .parents{
 
-    background:#182033;
+    background:
 
-    color:white;
+    radial-gradient(
+        circle at 50% 0%,
+        rgba(118,87,255,.2),
+        transparent 55%
+    ),
+
+    #080B14;
 }
 
 
@@ -1310,14 +1401,20 @@ section{
 
     padding:45px;
 
-    border:3px solid white;
+    background:
+    linear-gradient(
+        145deg,
+        #151D30,
+        #0E1420
+    );
+
+    border:1px solid #35415A;
 
     border-radius:25px;
 
-    background:#25304A;
-
     box-shadow:
-    8px 8px 0 var(--yellow);
+    0 30px 80px
+    rgba(0,0,0,.3);
 }
 
 
@@ -1332,7 +1429,7 @@ section{
 
 .parents-box > p{
 
-    color:#CBD3E0;
+    color:var(--muted);
 
     line-height:1.75;
 
@@ -1357,11 +1454,11 @@ section{
 
     padding:20px;
 
-    background:#182033;
+    background:#0B101B;
 
     border-radius:16px;
 
-    border:1px solid #45506A;
+    border:1px solid #2A354A;
 }
 
 
@@ -1375,7 +1472,7 @@ section{
 
 .parent-feature span{
 
-    color:#AEB8C9;
+    color:#8C98AC;
 
     font-size:12px;
 
@@ -1399,15 +1496,21 @@ details{
 
     margin-bottom:12px;
 
-    background:white;
+    background:#111827;
 
-    border:3px solid #182033;
+    border:1px solid #2B3549;
 
     border-radius:16px;
 
-    box-shadow:4px 4px 0 #182033;
-
     overflow:hidden;
+
+    transition:.2s;
+}
+
+
+details:hover{
+
+    border-color:#47546D;
 }
 
 
@@ -1424,6 +1527,7 @@ summary{
 
 
 summary::-webkit-details-marker{
+
     display:none;
 }
 
@@ -1434,7 +1538,7 @@ summary::after{
 
     float:right;
 
-    color:var(--purple);
+    color:var(--purple-light);
 
     font-size:22px;
 }
@@ -1451,7 +1555,7 @@ details p{
     padding:
     0 20px 20px;
 
-    color:#687385;
+    color:#8D98AA;
 
     font-size:14px;
 
@@ -1466,13 +1570,14 @@ details p{
 .contact{
 
     background:
+
     linear-gradient(
         135deg,
-        #E6DEFF,
-        #FFF3B9
+        #17152B,
+        #0D1A26
     );
 
-    border-top:3px solid #182033;
+    border-top:1px solid #29364A;
 }
 
 
@@ -1484,16 +1589,18 @@ details p{
 
     text-align:center;
 
-    padding:50px 30px;
+    padding:55px 30px;
 
-    background:white;
+    background:
+    rgba(17,24,39,.85);
 
-    border:3px solid #182033;
+    border:1px solid #3B465C;
 
     border-radius:28px;
 
     box-shadow:
-    9px 9px 0 #182033;
+    0 30px 80px
+    rgba(0,0,0,.35);
 }
 
 
@@ -1510,7 +1617,7 @@ details p{
 
 .contact-box p{
 
-    color:#697384;
+    color:var(--muted);
 
     max-width:650px;
 
@@ -1538,7 +1645,7 @@ details p{
 
     background:#25D366;
 
-    color:#10251A;
+    color:#071B10;
 }
 
 
@@ -1558,7 +1665,7 @@ details p{
 
     font-weight:1000;
 
-    color:#596375;
+    color:#8490A4;
 }
 
 
@@ -1568,13 +1675,15 @@ details p{
 
 footer{
 
-    background:#101623;
+    background:#05070D;
 
     color:white;
 
     text-align:center;
 
-    padding:40px 20px;
+    padding:45px 20px;
+
+    border-top:1px solid #1C2535;
 }
 
 
@@ -1586,7 +1695,7 @@ footer .logo{
 
 footer p{
 
-    color:#8994A7;
+    color:#69758A;
 
     font-size:12px;
 
@@ -1595,7 +1704,7 @@ footer p{
 
 
 /* =========================================================
-   BOTÃO FLUTUANTE WHATSAPP
+   WHATSAPP FLUTUANTE
 ========================================================= */
 
 .whatsapp-float{
@@ -1612,18 +1721,20 @@ footer p{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     background:#25D366;
 
-    border:3px solid #182033;
+    color:#06190E;
 
     border-radius:50%;
 
     font-size:27px;
 
     box-shadow:
-    4px 4px 0 #182033;
+    0 10px 30px
+    rgba(37,211,102,.25);
 
     z-index:900;
 
@@ -1634,12 +1745,13 @@ footer p{
 .whatsapp-float:hover{
 
     transform:
-    translateY(-4px);
+    translateY(-5px)
+    scale(1.05);
 }
 
 
 /* =========================================================
-   VOLTAR AO TOPO
+   TOPO
 ========================================================= */
 
 .top{
@@ -1656,16 +1768,16 @@ footer p{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    background:white;
+    background:#111827;
 
-    border:3px solid #182033;
+    color:white;
+
+    border:1px solid #3A465D;
 
     border-radius:12px;
-
-    box-shadow:
-    3px 3px 0 #182033;
 
     cursor:pointer;
 
@@ -1688,7 +1800,7 @@ footer p{
 
 
 /* =========================================================
-   ANIMAÇÃO
+   ANIMAÇÕES
 ========================================================= */
 
 .reveal{
@@ -1719,12 +1831,16 @@ footer p{
 @media(max-width:950px){
 
     nav{
+
         display:none;
     }
 
+
     .menu-button{
+
         display:block;
     }
+
 
     nav.mobile{
 
@@ -1743,17 +1859,20 @@ footer p{
 
         padding:10px;
 
-        background:white;
+        background:#111827;
 
-        border:3px solid #182033;
+        border:1px solid #3A465D;
 
-        border-radius:18px;
+        border-radius:17px;
 
         box-shadow:
-        5px 5px 0 #182033;
+        0 20px 50px
+        rgba(0,0,0,.4);
     }
 
+
     nav.mobile a{
+
         padding:13px;
     }
 
@@ -1767,45 +1886,53 @@ footer p{
 
 
     .hero-description{
+
         margin-left:auto;
         margin-right:auto;
     }
 
 
     .hero-buttons{
+
         justify-content:center;
     }
 
 
     .hero-character{
+
         min-height:390px;
     }
 
 
     .about-grid{
+
         grid-template-columns:1fr;
     }
 
 
     .levels{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
 
     .tech-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
 
     .skill-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
 
     .parents-features{
+
         grid-template-columns:
         repeat(2,1fr);
     }
@@ -1813,19 +1940,26 @@ footer p{
 }
 
 
+/* =========================================================
+   CELULAR
+========================================================= */
+
 @media(max-width:620px){
 
     section{
+
         padding:75px 18px;
     }
 
 
     .navbar{
+
         height:60px;
     }
 
 
     .hero{
+
         padding-top:120px;
     }
 
@@ -1839,18 +1973,20 @@ footer p{
 
 
     .hero-description{
+
         font-size:16px;
     }
 
 
     .character-circle{
 
-        width:280px;
-        height:280px;
+        width:285px;
+        height:285px;
     }
 
 
     .robot{
+
         font-size:125px;
     }
 
@@ -1858,6 +1994,7 @@ footer p{
     .speech.one{
 
         right:-5px;
+
         top:20px;
     }
 
@@ -1865,6 +2002,7 @@ footer p{
     .speech.two{
 
         left:-5px;
+
         bottom:30px;
     }
 
@@ -1907,6 +2045,12 @@ footer p{
     }
 
 
+    .parents-box{
+
+        padding:35px 22px;
+    }
+
+
     .contact-box{
 
         padding:40px 20px;
@@ -1916,6 +2060,16 @@ footer p{
     .contact-buttons .button{
 
         width:100%;
+    }
+
+
+    .whatsapp-float{
+
+        width:54px;
+        height:54px;
+
+        right:15px;
+        bottom:15px;
     }
 
 }
@@ -1928,6 +2082,9 @@ footer p{
 <body>
 
 
+<div class="grid-background"></div>
+
+
 <!-- ======================================================
      HEADER
 ====================================================== -->
@@ -1938,7 +2095,9 @@ footer p{
 
 
 <a href="#inicio" class="logo">
+
 Ctrl<span>+</span>Play
+
 </a>
 
 
@@ -1991,6 +2150,7 @@ onclick="toggleMenu()">
 
 <section class="hero" id="inicio">
 
+
 <div class="hero-container">
 
 
@@ -1999,17 +2159,16 @@ onclick="toggleMenu()">
 
 <div class="sticker">
 
-🚀
-O FUTURO COMEÇA AQUI!
+🚀 O FUTURO COMEÇA AQUI
 
 </div>
 
 
 <h1>
 
-Aprender tecnologia
-é muito mais
-<span>divertido!</span>
+Tecnologia que
+você pode
+<span>criar.</span>
 
 </h1>
 
@@ -2017,14 +2176,21 @@ Aprender tecnologia
 <p class="hero-description">
 
 Na Ctrl+Play, crianças e adolescentes
-aprendem programação, robótica e tecnologia
-enquanto criam, experimentam e colocam
-a imaginação para funcionar.
+aprendem programação, robótica, eletrônica
+e tecnologia enquanto colocam suas ideias
+em prática.
+
+Aqui, tecnologia não é apenas para usar.
+
+<strong>
+É para criar.
+</strong>
 
 </p>
 
 
 <div class="hero-buttons">
+
 
 <a
 href="#niveis"
@@ -2042,6 +2208,7 @@ class="button button-yellow">
 💬 Falar com a escola
 
 </a>
+
 
 </div>
 
@@ -2074,7 +2241,9 @@ CRIAR ISSO!"
 <div class="character-circle">
 
 <div class="robot">
+
 🤖
+
 </div>
 
 </div>
@@ -2082,8 +2251,7 @@ CRIAR ISSO!"
 
 <div class="speech two">
 
-💡
-E se a gente
+💡 E se a gente
 programasse?
 
 </div>
@@ -2112,14 +2280,20 @@ programasse?
 A ideia
 </span>
 
+
 <h2>
+
 Tecnologia para criar,
 não só para consumir.
+
 </h2>
 
+
 <p>
+
 A curiosidade é o ponto de partida.
 O projeto é o resultado.
+
 </p>
 
 </div>
@@ -2130,9 +2304,11 @@ O projeto é o resultado.
 
 <div class="about-card">
 
+
 <h3>
 🤖 Mão na massa!
 </h3>
+
 
 <p>
 
@@ -2141,6 +2317,7 @@ cria, programa, testa, erra, conserta
 e descobre novas possibilidades.
 
 </p>
+
 
 <p>
 
@@ -2153,11 +2330,10 @@ para quem está aprendendo.
 
 <div class="about-list">
 
+
 <div>
 
-<span class="check">
-✓
-</span>
+<span class="check">✓</span>
 
 Programação
 
@@ -2166,9 +2342,7 @@ Programação
 
 <div>
 
-<span class="check">
-✓
-</span>
+<span class="check">✓</span>
 
 Robótica
 
@@ -2177,9 +2351,7 @@ Robótica
 
 <div>
 
-<span class="check">
-✓
-</span>
+<span class="check">✓</span>
 
 Eletrônica
 
@@ -2188,13 +2360,12 @@ Eletrônica
 
 <div>
 
-<span class="check">
-✓
-</span>
+<span class="check">✓</span>
 
 Criatividade
 
 </div>
+
 
 </div>
 
@@ -2203,9 +2374,11 @@ Criatividade
 
 <div class="parents-card">
 
+
 <h3>
 👨‍👩‍👧‍👦 E para os pais?
 </h3>
+
 
 <p>
 
@@ -2215,15 +2388,19 @@ para o futuro.
 
 </p>
 
+
 <p>
 
 <strong>
+
 Pensamento lógico, criatividade,
 autonomia, resolução de problemas
 e trabalho em equipe.
+
 </strong>
 
 </p>
+
 
 <p>
 
@@ -2231,6 +2408,7 @@ A tecnologia vira um meio para desenvolver
 o potencial de cada aluno.
 
 </p>
+
 
 </div>
 
@@ -2253,18 +2431,26 @@ o potencial de cada aluno.
 
 <div class="section-title">
 
+
 <span class="section-tag">
 A jornada
 </span>
 
+
 <h2>
+
 Cada fase é uma nova missão 🚀
+
 </h2>
 
+
 <p>
+
 O aluno começa descobrindo e, aos poucos,
 passa a criar seus próprios projetos.
+
 </p>
+
 
 </div>
 
@@ -2274,72 +2460,96 @@ passa a criar seus próprios projetos.
 
 <div class="level">
 
+
 <div class="level-number">
 01
 </div>
+
 
 <h3>
 🧩 Descobrir
 </h3>
 
+
 <p>
+
 Primeiros contatos com lógica,
 criatividade e pensamento computacional.
+
 </p>
+
 
 </div>
 
 
 <div class="level">
+
 
 <div class="level-number">
 02
 </div>
 
+
 <h3>
 💻 Criar
 </h3>
 
+
 <p>
+
 Jogos, animações, desafios e primeiros
 projetos de programação.
+
 </p>
+
 
 </div>
 
 
 <div class="level">
+
 
 <div class="level-number">
 03
 </div>
 
+
 <h3>
 🤖 Construir
 </h3>
 
+
 <p>
+
 Robótica, sensores, eletrônica,
 motores e projetos interativos.
+
 </p>
+
 
 </div>
 
 
 <div class="level">
 
+
 <div class="level-number">
 04
 </div>
+
 
 <h3>
 🚀 Inventar
 </h3>
 
+
 <p>
+
 Projetos próprios, soluções criativas
 e desafios cada vez maiores.
+
 </p>
+
 
 </div>
 
@@ -2357,18 +2567,22 @@ e desafios cada vez maiores.
 
 <section class="tech" id="tecnologias">
 
+
 <div class="container">
 
 
 <div class="section-title">
 
+
 <span class="section-tag">
 Universo Ctrl+Play
 </span>
 
+
 <h2>
 O que podemos criar?
 </h2>
+
 
 <p>
 
@@ -2376,6 +2590,7 @@ Da programação à robótica,
 existem muitos caminhos para explorar.
 
 </p>
+
 
 </div>
 
@@ -2532,22 +2747,31 @@ Criar e construir
 
 <section class="projects" id="projetos">
 
+
 <div class="container">
 
 
 <div class="section-title">
 
+
 <span class="section-tag">
 Mão na massa
 </span>
 
+
 <h2>
+
 Ideias que viram projetos.
+
 </h2>
 
+
 <p>
+
 Aqui, aprender significa fazer.
+
 </p>
+
 
 </div>
 
@@ -2557,72 +2781,96 @@ Aqui, aprender significa fazer.
 
 <div class="project">
 
+
 <div class="project-icon">
 🤖
 </div>
+
 
 <h3>
 Robôs
 </h3>
 
+
 <p>
+
 Construção e programação de robôs,
 sensores, motores e sistemas autônomos.
+
 </p>
+
 
 </div>
 
 
 <div class="project">
+
 
 <div class="project-icon">
 🚦
 </div>
 
+
 <h3>
 Cidades inteligentes
 </h3>
 
+
 <p>
+
 Semáforos, iluminação, sensores,
 cancelas e automação.
+
 </p>
+
 
 </div>
 
 
 <div class="project">
+
 
 <div class="project-icon">
 🎮
 </div>
 
+
 <h3>
 Games
 </h3>
 
+
 <p>
+
 Jogos, personagens, desafios,
 pontuação e muita criatividade.
+
 </p>
+
 
 </div>
 
 
 <div class="project">
 
+
 <div class="project-icon">
 💡
 </div>
+
 
 <h3>
 Projetos eletrônicos
 </h3>
 
+
 <p>
+
 LEDs, botões, buzzers, motores
 e sensores trabalhando juntos.
+
 </p>
+
 
 </div>
 
@@ -2640,18 +2888,24 @@ e sensores trabalhando juntos.
 
 <section class="skills">
 
+
 <div class="container">
 
 
 <div class="section-title">
 
+
 <span class="section-tag">
 Muito além da tecnologia
 </span>
 
+
 <h2>
+
 O que fica depois da aula?
+
 </h2>
+
 
 </div>
 
@@ -2661,9 +2915,11 @@ O que fica depois da aula?
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🧠
 </div>
+
 
 <div>
 
@@ -2671,21 +2927,28 @@ O que fica depois da aula?
 Pensamento lógico
 </h3>
 
+
 <p>
+
 Aprender a analisar problemas
 e encontrar caminhos.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🎨
 </div>
+
 
 <div>
 
@@ -2693,21 +2956,28 @@ e encontrar caminhos.
 Criatividade
 </h3>
 
+
 <p>
+
 Imaginar novas possibilidades
 e transformar ideias.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🔎
 </div>
+
 
 <div>
 
@@ -2715,21 +2985,28 @@ e transformar ideias.
 Resolução de problemas
 </h3>
 
+
 <p>
+
 Testar, errar, aprender
 e tentar novamente.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🤝
 </div>
+
 
 <div>
 
@@ -2737,21 +3014,28 @@ e tentar novamente.
 Trabalho em equipe
 </h3>
 
+
 <p>
+
 Construir projetos
 junto com outras pessoas.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🗣️
 </div>
+
 
 <div>
 
@@ -2759,21 +3043,28 @@ junto com outras pessoas.
 Comunicação
 </h3>
 
+
 <p>
+
 Aprender a explicar
 as próprias ideias.
+
 </p>
 
+
 </div>
+
 
 </div>
 
 
 <div class="skill">
 
+
 <div class="skill-icon">
 🚀
 </div>
+
 
 <div>
 
@@ -2781,12 +3072,17 @@ as próprias ideias.
 Autonomia
 </h3>
 
+
 <p>
+
 Ter coragem para
 experimentar e criar.
+
 </p>
 
+
 </div>
+
 
 </div>
 
@@ -2804,15 +3100,20 @@ experimentar e criar.
 
 <section class="parents" id="pais">
 
+
 <div class="container">
 
 
 <div class="parents-box">
 
+
 <h2>
+
 Para quem acompanha
 essa jornada. 💜
+
 </h2>
+
 
 <p>
 
@@ -2834,8 +3135,10 @@ criatividade e desenvolvimento.
 </strong>
 
 <span>
+
 Desenvolvimento de raciocínio,
 criatividade e resolução de problemas.
+
 </span>
 
 </div>
@@ -2848,8 +3151,10 @@ criatividade e resolução de problemas.
 </strong>
 
 <span>
+
 O conhecimento é aplicado em
 projetos e desafios.
+
 </span>
 
 </div>
@@ -2862,8 +3167,10 @@ projetos e desafios.
 </strong>
 
 <span>
+
 Contato com habilidades e
 tecnologias importantes.
+
 </span>
 
 </div>
@@ -2884,18 +3191,22 @@ tecnologias importantes.
 
 <section id="faq">
 
+
 <div class="container">
 
 
 <div class="section-title">
 
+
 <span class="section-tag">
 Dúvidas?
 </span>
 
+
 <h2>
 Perguntas frequentes
 </h2>
+
 
 </div>
 
@@ -2906,8 +3217,11 @@ Perguntas frequentes
 <details>
 
 <summary>
+
 Precisa saber programar para começar?
+
 </summary>
+
 
 <p>
 
@@ -2923,8 +3237,11 @@ progressivamente.
 <details>
 
 <summary>
+
 A Ctrl+Play trabalha apenas com programação?
+
 </summary>
+
 
 <p>
 
@@ -2941,8 +3258,11 @@ web e projetos maker.
 <details>
 
 <summary>
+
 O aluno realmente constrói projetos?
+
 </summary>
+
 
 <p>
 
@@ -2958,8 +3278,11 @@ criar projetos e solucionar desafios.
 <details>
 
 <summary>
+
 O erro faz parte do aprendizado?
+
 </summary>
+
 
 <p>
 
@@ -2985,6 +3308,7 @@ parte importante do processo criativo.
 
 <section class="contact" id="contato">
 
+
 <div class="container">
 
 
@@ -2992,7 +3316,9 @@ parte importante do processo criativo.
 
 
 <h2>
+
 Quer saber mais?
+
 </h2>
 
 
@@ -3051,19 +3377,27 @@ href="tel:+559184131065">
 
 <footer>
 
+
 <div class="logo">
 
 Ctrl<span>+</span>Play
 
 </div>
 
-<p>
-Tecnologia • Criatividade • Inovação
-</p>
 
 <p>
-© 2026 Ctrl+Play
+
+Tecnologia • Criatividade • Inovação
+
 </p>
+
+
+<p>
+
+© 2026 Ctrl+Play
+
+</p>
+
 
 </footer>
 
@@ -3104,7 +3438,9 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 <script>
 
 
-/* MENU */
+/* ======================================================
+   MENU MOBILE
+====================================================== */
 
 function toggleMenu(){
 
@@ -3116,7 +3452,7 @@ function toggleMenu(){
 }
 
 
-/* FECHAR MENU */
+/* Fecha o menu ao clicar */
 
 document
 .querySelectorAll("#menu a")
@@ -3137,7 +3473,9 @@ document
 });
 
 
-/* ANIMAÇÃO */
+/* ======================================================
+   ANIMAÇÃO DOS ELEMENTOS
+====================================================== */
 
 const observer =
 new IntersectionObserver(
@@ -3178,9 +3516,11 @@ document
 });
 
 
-/* BOTÃO TOPO */
+/* ======================================================
+   BOTÃO VOLTAR AO TOPO
+====================================================== */
 
-const top =
+const topButton =
 document.getElementById("top");
 
 
@@ -3190,17 +3530,18 @@ window.addEventListener(
 
         if(window.scrollY > 500){
 
-            top.classList.add("show");
+            topButton.classList.add("show");
 
-        }else{
+        }
 
-            top.classList.remove("show");
+        else{
+
+            topButton.classList.remove("show");
 
         }
 
     }
 );
-
 
 </script>
 
@@ -3208,4 +3549,3 @@ window.addEventListener(
 </body>
 
 </html>
-```
