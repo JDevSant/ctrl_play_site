@@ -2074,6 +2074,202 @@ footer p{
 
 }
 
+
+
+/* =========================================================
+   O QUE PODEMOS CRIAR — TÓPICOS INTERATIVOS
+========================================================= */
+
+.creation-section{
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(118,87,255,.10),
+            transparent 55%
+        ),
+        #0D1220;
+}
+
+.creation-topics{
+    max-width:920px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2px 34px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.creation-topic{
+    appearance:none;
+    width:100%;
+    display:grid;
+    grid-template-columns:42px 1fr 20px;
+    align-items:center;
+    gap:14px;
+    padding:20px 4px;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:inherit;
+    text-align:left;
+    font:inherit;
+    cursor:pointer;
+    transition:.22s ease;
+}
+
+.creation-topic:hover{
+    padding-left:10px;
+}
+
+.topic-icon{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:rgba(118,87,255,.10);
+    border:1px solid rgba(118,87,255,.22);
+    font-size:19px;
+    transition:.22s ease;
+}
+
+.creation-topic:hover .topic-icon{
+    background:rgba(118,87,255,.17);
+    border-color:rgba(154,134,255,.45);
+}
+
+.topic-content{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+
+.topic-content strong{
+    font-size:15px;
+    font-weight:1000;
+    color:#F5F7FF;
+}
+
+.topic-content small{
+    color:#7F8A9E;
+    font-size:11px;
+    line-height:1.55;
+}
+
+.topic-arrow{
+    color:#68748A;
+    font-size:18px;
+    transition:.22s ease;
+}
+
+.creation-topic:hover .topic-arrow{
+    color:#A496FF;
+    transform:translateX(4px);
+}
+
+.creation-hint{
+    margin:24px auto 0;
+    text-align:center;
+    color:#69758A;
+    font-size:11px;
+}
+
+/* =========================================================
+   MODAL SUTIL
+========================================================= */
+
+.creation-modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(3,5,10,.72);
+    backdrop-filter:blur(7px);
+    z-index:2100;
+}
+
+.creation-modal.active{
+    display:flex;
+}
+
+.creation-modal-box{
+    width:100%;
+    max-width:560px;
+    padding:34px;
+    position:relative;
+    background:#111827;
+    border:1px solid #35415A;
+    border-radius:22px;
+    box-shadow:0 30px 90px rgba(0,0,0,.42);
+}
+
+.creation-modal-close{
+    position:absolute;
+    top:12px;
+    right:14px;
+    width:34px;
+    height:34px;
+    border:1px solid #344056;
+    border-radius:9px;
+    background:#182133;
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+}
+
+.creation-modal-label{
+    display:block;
+    margin-bottom:8px;
+    color:#A496FF;
+    font-size:10px;
+    font-weight:1000;
+    letter-spacing:1.5px;
+}
+
+.creation-modal-box h3{
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.creation-modal-box > p{
+    color:#AAB4C7;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.creation-modal-points{
+    margin-top:20px;
+    display:grid;
+    gap:9px;
+}
+
+.creation-modal-point{
+    padding:10px 12px;
+    border-left:2px solid #7657FF;
+    color:#D7DCE7;
+    background:rgba(118,87,255,.06);
+    font-size:12px;
+    line-height:1.55;
+}
+
+@media(max-width:700px){
+    .creation-topics{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .creation-topic{
+        grid-template-columns:40px 1fr 18px;
+    }
+
+    .creation-modal-box{
+        padding:29px 23px;
+    }
+}
+
 </style>
 
 </head>
@@ -2565,180 +2761,141 @@ e desafios cada vez maiores.
      TECNOLOGIAS
 ====================================================== -->
 
-<section class="tech" id="tecnologias">
-
+<section class="tech creation-section" id="tecnologias">
 
 <div class="container">
 
-
 <div class="section-title">
-
 
 <span class="section-tag">
 Universo Ctrl+Play
 </span>
 
-
 <h2>
 O que podemos criar?
 </h2>
 
-
 <p>
-
-Da programação à robótica,
-existem muitos caminhos para explorar.
-
-</p>
-
-
-</div>
-
-
-<div class="tech-grid">
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-💻
-</div>
-
-<h3>
-Programação
-</h3>
-
-<p>
-Lógica e código
+Não existe um único caminho para a tecnologia.
+A ideia é experimentar, construir e descobrir
+o que faz sentido para cada aluno.
 </p>
 
 </div>
 
+<div class="creation-topics">
 
-<div class="tech-card">
+<button class="creation-topic" type="button"
+onclick="openCreation('programacao')">
+    <span class="topic-icon">💻</span>
+    <span class="topic-content">
+        <strong>Programação</strong>
+        <small>Transformar ideias em lógica, código e soluções que realmente funcionam.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
 
-<div class="tech-icon">
-🤖
+<button class="creation-topic" type="button"
+onclick="openCreation('robotica')">
+    <span class="topic-icon">🤖</span>
+    <span class="topic-content">
+        <strong>Robótica</strong>
+        <small>Projetar e programar robôs, unindo sensores, motores e movimento.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
+<button class="creation-topic" type="button"
+onclick="openCreation('eletronica')">
+    <span class="topic-icon">⚡</span>
+    <span class="topic-content">
+        <strong>Eletrônica</strong>
+        <small>Dar vida às ideias com circuitos, componentes, sensores e automação.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
+<button class="creation-topic" type="button"
+onclick="openCreation('games')">
+    <span class="topic-icon">🎮</span>
+    <span class="topic-content">
+        <strong>Games</strong>
+        <small>Criar jogos, personagens e desafios enquanto aprende a pensar como um desenvolvedor.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
+<button class="creation-topic" type="button"
+onclick="openCreation('ia')">
+    <span class="topic-icon">🧠</span>
+    <span class="topic-content">
+        <strong>Inteligência Artificial</strong>
+        <small>Explorar novas formas de usar tecnologia para criar, analisar e resolver problemas.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
+<button class="creation-topic" type="button"
+onclick="openCreation('web')">
+    <span class="topic-icon">🌐</span>
+    <span class="topic-content">
+        <strong>Web e aplicativos</strong>
+        <small>Construir interfaces e experiências digitais que podem sair da tela e ganhar propósito.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
+<button class="creation-topic" type="button"
+onclick="openCreation('maker')">
+    <span class="topic-icon">🛠️</span>
+    <span class="topic-content">
+        <strong>Projetos Maker</strong>
+        <small>Imaginar, prototipar, testar e construir algo próprio usando tecnologia e criatividade.</small>
+    </span>
+    <span class="topic-arrow">→</span>
+</button>
+
 </div>
 
-<h3>
-Robótica
-</h3>
-
-<p>
-Robôs e automação
+<p class="creation-hint">
+Clique em um tema para descobrir algumas das possibilidades.
 </p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-⚡
-</div>
-
-<h3>
-Eletrônica
-</h3>
-
-<p>
-Sensores e circuitos
-</p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-🎮
-</div>
-
-<h3>
-Games
-</h3>
-
-<p>
-Jogos e desafios
-</p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-🧠
-</div>
-
-<h3>
-Inteligência Artificial
-</h3>
-
-<p>
-Tecnologia do futuro
-</p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-🌐
-</div>
-
-<h3>
-Web
-</h3>
-
-<p>
-Sites e experiências
-</p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-📱
-</div>
-
-<h3>
-Aplicativos
-</h3>
-
-<p>
-Apps e interfaces
-</p>
-
-</div>
-
-
-<div class="tech-card">
-
-<div class="tech-icon">
-🛠️
-</div>
-
-<h3>
-Maker
-</h3>
-
-<p>
-Criar e construir
-</p>
-
-</div>
-
-
-</div>
 
 </div>
 
 </section>
+
+<!-- ======================================================
+     MODAL — O QUE PODEMOS CRIAR
+====================================================== -->
+
+<div class="creation-modal" id="creationModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="creationModalTitle"
+     onclick="closeCreation(event)">
+
+<div class="creation-modal-box" onclick="event.stopPropagation()">
+
+<button class="creation-modal-close"
+        type="button"
+        onclick="closeCreation()"
+        aria-label="Fechar">
+    ×
+</button>
+
+<span class="creation-modal-label">
+POSSIBILIDADES CTRL+PLAY
+</span>
+
+<h3 id="creationModalTitle"></h3>
+
+<p id="creationModalText"></p>
+
+<div class="creation-modal-points" id="creationModalPoints"></div>
+
+</div>
+</div>
 
 
 <!-- ======================================================
@@ -3356,14 +3513,6 @@ href="tel:+559184131065">
 
 </div>
 
-
-<div class="contact-number">
-
-📱 +55 91 8413-1065
-
-</div>
-
-
 </div>
 
 </div>
@@ -3377,27 +3526,17 @@ href="tel:+559184131065">
 
 <footer>
 
-
 <div class="logo">
-
 Ctrl<span>+</span>Play
-
 </div>
 
-
 <p>
-
 Tecnologia • Criatividade • Inovação
-
 </p>
 
-
-<p>
-
-© 2026 Ctrl+Play
-
-</p>
-
+<div class="signature">
+Desenvolvido por <strong>JuanSant</strong>
+</div>
 
 </footer>
 
@@ -3505,7 +3644,7 @@ new IntersectionObserver(
 
 document
 .querySelectorAll(
-    ".about-card, .parents-card, .level, .tech-card, .project, .skill, details"
+    ".about-card, .parents-card, .level, .creation-topic, .project, .skill, details"
 )
 .forEach(element => {
 
@@ -3542,6 +3681,109 @@ window.addEventListener(
 
     }
 );
+
+
+
+/* ======================================================
+   TÓPICOS — O QUE PODEMOS CRIAR
+====================================================== */
+
+const creationContent = {
+    programacao: {
+        title: "Programação",
+        text: "O aluno aprende a transformar uma ideia em uma sequência de instruções, entendendo lógica, estruturas e maneiras de resolver problemas.",
+        points: [
+            "Pensamento lógico e organização de ideias.",
+            "Criação de projetos e pequenas aplicações.",
+            "Aprender fazendo, testando e melhorando."
+        ]
+    },
+    robotica: {
+        title: "Robótica",
+        text: "Código e componentes trabalham juntos para criar máquinas que percebem o ambiente, tomam decisões e realizam ações.",
+        points: [
+            "Sensores, motores e automação.",
+            "Montagem e programação de robôs.",
+            "Projetos que conectam software e hardware."
+        ]
+    },
+    eletronica: {
+        title: "Eletrônica",
+        text: "É onde uma ideia começa a ganhar forma física: circuitos, LEDs, botões, sensores e motores passam a trabalhar em conjunto.",
+        points: [
+            "Leitura e uso de componentes.",
+            "Circuitos e sistemas de controle.",
+            "Prototipagem e experimentação."
+        ]
+    },
+    games: {
+        title: "Games",
+        text: "Criar um jogo envolve muito mais do que jogar: é pensar em regras, personagens, desafios, interação e experiência.",
+        points: [
+            "Criação de mecânicas e desafios.",
+            "Personagens, fases e sistemas de pontuação.",
+            "Criatividade aplicada à programação."
+        ]
+    },
+    ia: {
+        title: "Inteligência Artificial",
+        text: "Uma introdução ao universo da IA para entender como novas tecnologias podem apoiar a criatividade, a análise e a solução de problemas.",
+        points: [
+            "Exploração de ferramentas e possibilidades.",
+            "Tecnologia aplicada a projetos.",
+            "Uso consciente e criativo da IA."
+        ]
+    },
+    web: {
+        title: "Web e aplicativos",
+        text: "Da ideia à interface, o aluno pode criar experiências digitais pensando em quem vai usar, no problema que será resolvido e em como tudo funciona.",
+        points: [
+            "Interfaces e experiências digitais.",
+            "Estrutura, interação e apresentação.",
+            "Projetos com propósito e identidade."
+        ]
+    },
+    maker: {
+        title: "Projetos Maker",
+        text: "O movimento maker transforma curiosidade em protótipos: imaginar, construir, testar, errar e tentar de novo faz parte do processo.",
+        points: [
+            "Prototipagem e construção.",
+            "Integração entre criatividade e tecnologia.",
+            "Aprender com a experimentação."
+        ]
+    }
+};
+
+function openCreation(key){
+    const item = creationContent[key];
+
+    if(!item) return;
+
+    document.getElementById("creationModalTitle").textContent = item.title;
+    document.getElementById("creationModalText").textContent = item.text;
+
+    document.getElementById("creationModalPoints").innerHTML =
+        item.points.map(point =>
+            `<div class="creation-modal-point">${point}</div>`
+        ).join("");
+
+    document.getElementById("creationModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeCreation(event){
+    if(event && event.target !== event.currentTarget) return;
+
+    document.getElementById("creationModal").classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        document.getElementById("creationModal").classList.remove("active");
+        document.body.style.overflow = "";
+    }
+});
 
 </script>
 
